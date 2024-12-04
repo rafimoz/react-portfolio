@@ -125,15 +125,18 @@ const RecentWork = () => {
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
                   <div className="flex h-[70vh] sm:h-full gsap__track" ref={gsapTrackRef}>
                     {images.map((image, index) => (
-                      <div
-                        key={index}
-                        className="flex-none w-[100vw] h-full sm:w-[60vw] sm:h-full overflow-hidden bg-black ml-3 first:ml-0 gsap__item"
-                      >
+                      <div key={index} className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                        <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img
                           src={image}
                           alt={`Slide ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
+                        </div>
+                        <div className='flex flex-col justify-between items-center'>
+                          <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#0{index + 1}</p>
+                          <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                        </div>
                       </div>
                     ))}
                   </div>

@@ -53,17 +53,16 @@ const Artist = () => {
                 <p>Also an Artist</p>
             </div>
 
-            <div className=' flex flex-row justify-center gap-3'>
-                <div className='flex flex-col justify-start gap-3 w-[50%]'>
-                    <img ref={(el) => (artRef.current[1] = el)} className='object-cover' src="src\assets\art-1.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[3] = el)} className='object-cover' src="src\assets\art-2.jpg" alt="" />
+            <div className='mt-3 flex flex-row justify-center gap-3'>
+                <div className='flex flex-col justify-start gap-3 w-[40%]'>
+                <img ref={(el) => (artRef.current[1] = el)} className='object-cover' src="src\assets\art-6.jpg" alt="" />
+                <img ref={(el) => (artRef.current[3] = el)} className='object-cover' src="src\assets\art-2.jpg" alt="" />
                     <img ref={(el) => (artRef.current[5] = el)} className='object-cover' src="src\assets\art-3.jpg" alt="" />
                     <img ref={(el) => (artRef.current[7] = el)} className='object-cover' src="src\assets\art-4.jpg" alt="" />
                     <img ref={(el) => (artRef.current[9] = el)} className='object-cover' src="src\assets\art-5.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[11] = el)} className='object-cover' src="src\assets\art-6.jpg" alt="" />
                 </div>
 
-                <div className='flex flex-col justify-start gap-3 w-[50%]'>
+                <div className='flex flex-col justify-start gap-3 w-[40%]'>
                     <img ref={(el) => (artRef.current[2] = el)} className='object-cover'  src="src\assets\art-8.jpg" alt="" />
                     <img ref={(el) => (artRef.current[4] = el)} className='object-cover'  src="src\assets\art-9.jpg" alt="" />
                     <img ref={(el) => (artRef.current[6] = el)} className='object-cover'  src="src\assets\art-10.jpg" alt="" />

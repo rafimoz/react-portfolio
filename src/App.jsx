@@ -10,6 +10,7 @@ import Works from "./pages/Works";
 import Artist from "./pages/Artist";
 import Preloader from "./components/Preloader"; // Import Preloader
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [mode, setMode] = useState(true);
@@ -47,8 +48,9 @@ function App() {
             <Experience />
             <Artist />
             <Contact />
+            <Footer />
           </div>
-        )}
+       )}
     </>
   );
 }

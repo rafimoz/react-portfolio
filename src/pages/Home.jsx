@@ -119,7 +119,7 @@ const Home = () => {
 
 
   return (
-    <div className='relative w-full h-[90vh] sm:h-[100vh] overflow-hidden'>
+    <div id='home' className='relative w-full h-[90vh] sm:h-[100vh] overflow-hidden'>
 
       <div ref={div1Ref} className='absolute w-72 h-72 rounded-full bg-primary/50'></div>
       <div ref={div2Ref} className='absolute w-72 h-72 rounded-full bg-primary/40'></div>
