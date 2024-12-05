@@ -141,7 +141,12 @@ const Home = () => {
       <div className='w-full relative h-[90vh] sm:h-[100vh] overflow-hidden backdrop-filter backdrop-blur-2xl'>
         <div className='absolute z-10 bottom-0 w-full h-1/4 bg-gradient-to-t from-secondary to-transparent'></div>
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
-          <img className='w-full' src="src\assets\header-image.png"  alt=""/>
+         {/* <img className='w-full' src="src\assets\header-image.png"  alt=""/> */} 
+
+<a href="https://www.imagebam.com/view/MEXVG9R" target="_blank"><img className='w-full'  src="https://thumbs4.imagebam.com/b8/a4/76/MEXVG9R_t.png" alt="header-image.png"/></a>
+
+
+
         </div>
         <div className='absolute flex items-center flex-col z-20 bottom-0 w-full opacity-0 translate-y-32' ref={headerRef}>
           <div>
