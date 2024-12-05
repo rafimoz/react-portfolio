@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useNavigate } from "react-router-dom";
+
 
 // Import local images
 import img1 from '../assets/uiux-1.jpg';
@@ -13,6 +15,9 @@ import img6 from '../assets/uiux-3.jpg';
 gsap.registerPlugin(ScrollTrigger);
 
 const RecentWork = () => {
+  const navigate = useNavigate();
+
+
   const workRef = useRef([]);
   const containerRef = useRef(null);
   const gsapBlRef = useRef(null);
@@ -151,7 +156,7 @@ const RecentWork = () => {
             <p className="w-full text-end text-sm sm:text-xl">
               View more of my works
             </p>
-              <button className=' w-14 h-12 sm:w-16 sm:h-16 p-1 text-sm sm:text-lg text-center rounded-full border border-primary hover:bg-primary hover:border-secondary hover:text-secondary transition-all'>here</button>
+              <button onClick={()=> navigate("/works")}  className=' w-14 h-12 sm:w-16 sm:h-16 p-1 text-sm sm:text-lg text-center rounded-full border border-primary hover:bg-primary hover:border-secondary hover:text-secondary transition-all'>here</button>
           </div>
         </section>
       </main>

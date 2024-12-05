@@ -37,6 +37,7 @@ const Home = () => {
 
   const div1Ref = useRef(null);
   const div2Ref = useRef(null);
+  const navRef = useRef(null);
 
 
     useEffect(() => {
@@ -74,7 +75,11 @@ const Home = () => {
   const curvedTextRef = useRef(null);
   useGSAP(() => {
     const tl = gsap.timeline({ repeat: -1 });
-    
+    tl.to(curvedTextRef.current, {
+      scale:1,
+      duration: 0.6,
+      ease: 'power1.inOut',
+    }),
     tl.to(curvedTextRef.current, {
       rotation: 360,
       duration: 10,
@@ -101,6 +106,15 @@ const Home = () => {
       delay: 0.8,
       ease: 'power3.out', // Smooth easing
     });
+
+    gsap.to(navRef.current, {
+      top: 5,
+      opacity: 1, // Fade in
+      duration: 1.5, // Animation duration
+      delay: 0.8,
+      ease: 'power3.out', // Smooth easing
+      
+    })
   }, []);
 
   const headerImg = useRef(null);
@@ -135,11 +149,11 @@ const Home = () => {
           <p className='w-full text-[17.5vw] font-bodoni leading-none'>MOZUMDER</p>
           </div>
         </div>
-        <div className='absolute z-20 top-0 right-0' ref={curvedTextRef} >
+        <div className=' scale-0 absolute z-20 top-0 right-0' ref={curvedTextRef} >
           <img className='scale-75 cursor-pointer rounded-full' src="src\assets\header-curved-text.svg" alt="" />
         </div>
 
-        <div className='absolute z-20 text-lg left-5 top-5 flex flex-col sm:flex-row font-aboreto'>
+        <div ref={navRef} className='absolute z-20 text-lg left-5 top-[-100px] flex flex-col sm:flex-row font-aboreto'>
           <p onClick={() => scrollToSection('about')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>About</p>
           <p onClick={() => scrollToSection('work')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>Works</p>
           <p onClick={() => scrollToSection('contact')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>Join Me</p>
