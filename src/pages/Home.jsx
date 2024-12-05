@@ -143,8 +143,7 @@ const Home = () => {
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
          {/* <img className='w-full' src="src\assets\header-image.png"  alt=""/> */} 
 
-<a href="https://www.imagebam.com/view/MEXVG9R" target="_blank"><img className='w-full'  src="https://thumbs4.imagebam.com/b8/a4/76/MEXVG9R_t.png" alt="header-image.png"/></a>
-
+<a href="https://freeimage.host/i/2EQv5ge"><img className='w-full' src="https://iili.io/2EQv5ge.png" alt="2EQv5ge.md.png" ></a>
 
 
         </div>
