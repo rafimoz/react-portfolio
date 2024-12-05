@@ -143,7 +143,11 @@ const Home = () => {
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
          {/* <img className='w-full' src="src\assets\header-image.png"  alt=""/> */} 
 
-<a href="https://freeimage.host/i/2EQv5ge"><img className='w-full' src="https://iili.io/2EQv5ge.png" alt="2EQv5ge.md.png" ></a>
+
+<a href="https://freeimage.host/"><img className='w-full'   src="https://iili.io/2EQv5ge.png" alt="2EQv5ge.png" border="0" /></a>
+
+
+
 
 
         </div>
