@@ -57,7 +57,7 @@ const Preloader = () => {
 
   return (
     <div
-      className={`overlay z-50 fixed w-full h-[100vh] transition-opacity duration-500 bg-secondary ${
+      className={`overlay z-50 fixed w-full h-[100svh] sm:h-[100vh] transition-opacity duration-500 bg-secondary ${
         isFadingOut ? "opacity-0" : "opacity-100"
       }`}
     >
