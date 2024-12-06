@@ -56,19 +56,18 @@ const Artist = () => {
             <div className='mt-3 w-full flex flex-row justify-center gap-3 overflow-hidden'>
                 <div className='flex flex-col justify-start gap-3 w-[50%]'>
                 <img ref={(el) => (artRef.current[1] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg" alt="" />
-                <img ref={(el) => (artRef.current[3] = el)} className='object-cover' src="src\assets\art-2.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[5] = el)} className='object-cover' src="src\assets\art-3.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[7] = el)} className='object-cover' src="src\assets\art-4.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[9] = el)} className='object-cover' src="src\assets\art-5.jpg" alt="" />
+                <img ref={(el) => (artRef.current[3] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-5_xlkmug.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[5] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-6_gsyoe8.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[7] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-2_rlmiib.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[9] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-7_nzy5sl.jpg" alt="" />
                 </div>
 
                 <div className='flex flex-col justify-start gap-3 w-[50%]'>
-                    <img ref={(el) => (artRef.current[2] = el)} className='object-cover'  src="src\assets\art-8.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[4] = el)} className='object-cover'  src="src\assets\art-9.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[6] = el)} className='object-cover'  src="src\assets\art-10.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[8] = el)} className='object-cover'  src="src\assets\art-11.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[10] = el)} className='object-cover'  src="src\assets\art-12.jpg" alt="" />
-                    <img ref={(el) => (artRef.current[12] = el)} className='object-cover'  src="src\assets\art-13.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[2] = el)} className='object-cover'  src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[4] = el)} className='object-cover'  src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521620/1733521522021_ngzfob.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[6] = el)} className='object-cover'  src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034358_okj5a0.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[8] = el)} className='object-cover'  src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521619/1733521591329_fjtjta.jpg" alt="" />
+                    <img ref={(el) => (artRef.current[10] = el)} className='object-cover'  src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034318_ck5frr.png" alt="" />
                 </div>
             </div>
         </div>
