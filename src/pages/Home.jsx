@@ -146,7 +146,7 @@ const Home = () => {
       <div className='w-full relative h-[90vh] sm:h-[100vh] overflow-hidden backdrop-filter backdrop-blur-2xl'>
         <div className='absolute z-10 bottom-0 w-full h-1/4 bg-gradient-to-t from-secondary to-transparent'></div>
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
-          <img className='w-full' src="https://iili.io/2EQv5ge.png" alt="2EQv5ge.png" border="0" />
+          <img className='w-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521980/header-image_dhyltu.png" alt="2EQv5ge.png" border="0" />
         </div>
         <div className='absolute flex items-center flex-col z-20 bottom-0 w-full opacity-0 translate-y-32' ref={headerRef}>
           <div>
@@ -155,7 +155,7 @@ const Home = () => {
           </div>
         </div>
         <div className=' scale-[-20] absolute z-20 top-0 right-0' ref={curvedTextRef} >
-          <img className='scale-75 cursor-pointer rounded-full' src="https://iili.io/2EDOBuj.png" alt="" />
+          <img className='scale-75 cursor-pointer rounded-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521979/header-curved-text_dvuywg.svg" alt="" />
         </div>
 
         <div ref={navRef} className='absolute z-20 text-lg left-5 top-[-100px] flex flex-col sm:flex-row font-aboreto'>
