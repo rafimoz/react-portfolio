@@ -55,7 +55,7 @@ const Artist = () => {
 
             <div className='mt-3 w-full flex flex-row justify-center gap-3 overflow-hidden'>
                 <div className='flex flex-col justify-start gap-3 w-[50%]'>
-                <img ref={(el) => (artRef.current[1] = el)} className='object-cover' src="src\assets\art-6.jpg" alt="" />
+                <img ref={(el) => (artRef.current[1] = el)} className='object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg" alt="" />
                 <img ref={(el) => (artRef.current[3] = el)} className='object-cover' src="src\assets\art-2.jpg" alt="" />
                     <img ref={(el) => (artRef.current[5] = el)} className='object-cover' src="src\assets\art-3.jpg" alt="" />
                     <img ref={(el) => (artRef.current[7] = el)} className='object-cover' src="src\assets\art-4.jpg" alt="" />
