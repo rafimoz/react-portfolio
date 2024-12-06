@@ -49,6 +49,11 @@ const Home = () => {
         x: gsap.utils.random(0, window.innerWidth - elementSize, true),
         y: gsap.utils.random(0, window.innerHeight - elementSize, true),
       });
+      gsap.to(element,{
+        scale: 1,
+        duration:1,
+        ease:'power1.inOut',
+      })
 
       const animate = () => {
         gsap.to(element, {
@@ -75,11 +80,11 @@ const Home = () => {
   const curvedTextRef = useRef(null);
   useGSAP(() => {
     const tl = gsap.timeline({ repeat: -1 });
-    tl.to(curvedTextRef.current, {
-      scale: 1,
-      duration: 0.6,
-      ease: 'power1.inOut',
-    }),
+    gsap.fromTo(curvedTextRef.current, 
+      { scale: 0 }, 
+      { scale: 1, duration: 0.6, ease: 'linear' }
+    );
+    
       tl.to(curvedTextRef.current, {
         rotation: 360,
         duration: 10,
@@ -135,8 +140,8 @@ const Home = () => {
   return (
     <div id='home' className='relative w-full h-[90vh] sm:h-[100vh] overflow-hidden'>
 
-      <div ref={div1Ref} className='absolute w-72 h-72 rounded-full bg-primary/50'></div>
-      <div ref={div2Ref} className='absolute w-72 h-72 rounded-full bg-primary/40'></div>
+      <div ref={div1Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/40'></div>
+      <div ref={div2Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/30'></div>
 
       <div className='w-full relative h-[90vh] sm:h-[100vh] overflow-hidden backdrop-filter backdrop-blur-2xl'>
         <div className='absolute z-10 bottom-0 w-full h-1/4 bg-gradient-to-t from-secondary to-transparent'></div>
@@ -149,7 +154,7 @@ const Home = () => {
             <p className='w-full text-[17.5vw] font-bodoni leading-none'>MOZUMDER</p>
           </div>
         </div>
-        <div className=' scale-0 absolute z-20 top-0 right-0' ref={curvedTextRef} >
+        <div className=' scale-[-20] absolute z-20 top-0 right-0' ref={curvedTextRef} >
           <img className='scale-75 cursor-pointer rounded-full' src="https://iili.io/2EDOBuj.png" alt="" />
         </div>
 

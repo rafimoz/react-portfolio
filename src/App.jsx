@@ -1,73 +1,70 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cursor from "./components/Cursor";
 import Preloader from "./components/Preloader";
+import { LoadingContext, LoadingProvider } from "./contexts/LoadingContext";
+import Home from "./pages/Home";
+import Titles from "./pages/Titles";
+import About from "./pages/About";
+import Expertise from "./pages/Expertise";
+import RecentWork from "./pages/RecentWork";
+import Experience from "./pages/Experience";
+import Artist from "./pages/Artist";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import Works from "./pages/Works";
 
-// Lazy load pages
-const Home = lazy(() => import("./pages/Home"));
-const Titles = lazy(() => import("./pages/Titles"));
-const About = lazy(() => import("./pages/About"));
-const Expertise = lazy(() => import("./pages/Expertise"));
-const RecentWork = lazy(() => import("./pages/RecentWork"));
-const Experience = lazy(() => import("./pages/Experience"));
-const Artist = lazy(() => import("./pages/Artist"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Footer = lazy(() => import("./components/Footer"));
-const Works = lazy(() => import("./pages/Works"));
-
-function App() {
-  const [mode, setMode] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
+function AppContent() {
+  const { isLoading } = useContext(LoadingContext);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000); // Simulate loading delay
-    };
-
-    window.addEventListener("load", handleLoad);
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
-  if (isLoading) {
-    return <Preloader />; // Show preloader while the app is loading
-  }
+    // Initially disable scrolling
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto"; // Re-enable scrolling after preloader
+    }
+  }, [isLoading]);
 
   return (
-    <Router>
-      <div
-        className={`${
-          mode ? "bg-secondary text-primary" : "bg-primary text-secondary"
-        } overflow-hidden`}
-      >
-        <Cursor />
-        <Suspense fallback={<Preloader />}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <Titles />
-                  <About />
-                  <Expertise />
-                  <RecentWork />
-                  <Experience />
-                  <Artist />
-                  <Contact />
-                  <Footer />
-                </>
-              }
-            />
-            <Route path="/works" element={<Works />} />
-          </Routes>
-        </Suspense>
-      </div>
-    </Router>
+    <div className="app-root bg-secondary text-primary">
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <Titles />
+                <About />
+                <Expertise />
+                <RecentWork />
+                <Experience />
+                <Artist />
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/works" element={<Works />} />
+        </Routes>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <LoadingProvider>
+      <Router>
+        <div className="inset-0">
+          <Cursor />
+          <AppContent />
+        </div>
+      </Router>
+    </LoadingProvider>
   );
 }
 

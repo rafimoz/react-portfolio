@@ -18,12 +18,12 @@ const About = () => {
       gsap.from(splitText.chars, {
         scrollTrigger: {
           trigger: splitTextRef.current,
-          start: 'top 50%',
-          end: 'bottom 70%',
+          start: 'top 40%',
+          end: 'bottom 50%',
           scrub: true,
         },
         opacity: 0,
-        y: 30,
+        y: 20,
         stagger: 0.1,
         ease: 'power2.out',
       });
