@@ -13,6 +13,7 @@ import Artist from "./pages/Artist";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Works from "./pages/Works";
+// import Arts from "./components/arts";
 
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);
@@ -36,6 +37,7 @@ function AppContent() {
             path="/"
             element={
               <>
+                {/* <Arts /> */}
                 <Home />
                 <Titles />
                 <About />

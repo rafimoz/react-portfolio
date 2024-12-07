@@ -3,15 +3,6 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useNavigate } from "react-router-dom";
 
-
-// Import local images
-import img1 from '../assets/uiux-1.jpg';
-import img2 from '../assets/uiux-2.jpg';
-import img3 from '../assets/uiux-3.jpg';
-import img4 from '../assets/uiux-1.jpg';
-import img5 from '../assets/uiux-2.jpg';
-import img6 from '../assets/uiux-3.jpg';
-
 gsap.registerPlugin(ScrollTrigger);
 
 const RecentWork = () => {
@@ -100,7 +91,7 @@ const RecentWork = () => {
           }
         });
       },
-      { threshold: 0.01}
+      { threshold: 0.01 }
     );
 
     if (containerRef.current) {
@@ -111,8 +102,6 @@ const RecentWork = () => {
       observer.disconnect();
     };
   }, []);
-
-  const images = [img1, img2, img3, img4, img5, img6];
 
   return (
     <section ref={containerRef} id='work' className="relative w-full overflow-hidden">
@@ -128,22 +117,58 @@ const RecentWork = () => {
             <div className="h-full gsap_h">
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
-                  <div className="flex h-[70vh] sm:h-full gsap__track" ref={gsapTrackRef}>
-                    {images.map((image, index) => (
-                      <div key={index} className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
-                        <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img
-                          src={image}
-                          alt={`Slide ${index + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                        </div>
-                        <div className='flex flex-col justify-between items-center'>
-                          <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#0{index + 1}</p>
-                          <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
-                        </div>
+                  <div className="flex h-[50vh] sm:h-full gsap__track" ref={gsapTrackRef}>
+
+                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574656/Home-Day_bnq0ya.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
-                    ))}
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
+                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574163/Group_3_c6riuk.png' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
+                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574167/Desktop_-_1_uao7yo.png' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
+                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#04</p>
+                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#05</p>
+                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -156,7 +181,7 @@ const RecentWork = () => {
             <p className="w-full text-end text-sm sm:text-xl">
               View more of my works
             </p>
-              <button onClick={()=> navigate("/works")}  className=' w-14 h-12 sm:w-16 sm:h-16 p-1 text-sm sm:text-lg text-center rounded-full border border-primary hover:bg-primary hover:border-secondary hover:text-secondary transition-all'>here</button>
+            <button onClick={() => navigate("/works")} className=' w-14 h-12 sm:w-16 sm:h-16 p-1 text-sm sm:text-lg text-center rounded-full border border-primary hover:bg-primary hover:border-secondary hover:text-secondary transition-all'>here</button>
           </div>
         </section>
       </main>

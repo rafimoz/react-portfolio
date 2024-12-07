@@ -81,8 +81,8 @@ const Home = () => {
   useGSAP(() => {
     const tl = gsap.timeline({ repeat: -1 });
     gsap.fromTo(curvedTextRef.current, 
-      { scale: 0 }, 
-      { scale: 1, duration: 0.6, ease: 'linear' }
+      { scale: 0, opacity: 0 }, 
+      { scale: 1, opacity: 1, duration: 0.5, ease: 'linear' }
     );
     
       tl.to(curvedTextRef.current, {
@@ -138,23 +138,23 @@ const Home = () => {
 
 
   return (
-    <div id='home' className='relative w-full h-[90vh] sm:h-[100vh] overflow-hidden'>
+    <div id='home' className='relative w-full h-[100svh] sm:h-[100vh] overflow-hidden'>
 
       <div ref={div1Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/40'></div>
       <div ref={div2Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/30'></div>
 
-      <div className='w-full relative h-[90vh] sm:h-[100vh] overflow-hidden backdrop-filter backdrop-blur-2xl'>
-        <div className='absolute z-10 bottom-0 w-full h-1/4 bg-gradient-to-t from-secondary to-transparent'></div>
+      <div className='w-full relative h-full overflow-hidden backdrop-filter backdrop-blur-2xl'>
+        <div className='absolute z-10 bottom-0 w-full h-1/5 bg-gradient-to-t from-secondary to-transparent'></div>
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
           <img className='w-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521980/header-image_dhyltu.png" alt="2EQv5ge.png" border="0" />
         </div>
-        <div className='absolute flex items-center flex-col z-20 bottom-0 w-full opacity-0 translate-y-32' ref={headerRef}>
+        <div className='absolute flex items-center flex-col z-10 bottom-0 w-full opacity-0 translate-y-32' ref={headerRef}>
           <div>
             <p className='w-full text-[13vw] font-allura leading-none'>Rafi</p>
             <p className='w-full text-[17.5vw] font-bodoni leading-none'>MOZUMDER</p>
           </div>
         </div>
-        <div className=' scale-[-20] absolute z-20 top-0 right-0' ref={curvedTextRef} >
+        <div className='absolute top-0 right-0' ref={curvedTextRef} >
           <img className='scale-75 cursor-pointer rounded-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521979/header-curved-text_dvuywg.svg" alt="" />
         </div>
 
