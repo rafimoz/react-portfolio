@@ -17,7 +17,7 @@ const Artist = () => {
                 tl.fromTo(
                     ref,
                     { x: index % 2 === 0 ? 900 : -900, opacity: 0 },
-                    { x: 0, opacity: 1, ease: 'power3.out', duration: 1 },
+                    { x: 0, opacity: 1, ease: 'power3.out', duration: 0.7 },
                     index * 0.2
                 );
             }
