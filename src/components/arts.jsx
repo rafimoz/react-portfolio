@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
@@ -79,46 +79,39 @@ const arts = () => {
 
     return (
         <section className='w-full overflow-x-hidden'>
+
             <div className=' h-[150vh] flex flex-col justify-center'>
-                <div className='marquee-container relative w-[125%] h-[250px] flex mb-4 overflow-hidden'>
+
+                <div className='marquee-container relative w-[125%] h-[150px] sm:h-[250px] flex mb-4 overflow-hidden'>
                     <div className='marquee w-full h-full absolute top-[50%] -left-[15%] -translate-y-[50%] flex gap-4' >
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-7xl font-bodoni'><h1>ALSO</h1></div>
+                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-5xl sm:text-7xl font-bigshoulders'><h1>ALSO</h1></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                     </div>
                 </div>
 
-                <div className='marquee-container relative w-[125%] h-[250px] flex mb-4 overflow-hidden'>
+                <div className='marquee-container relative w-[125%] h-[150px] sm:h-[250px] flex mb-4 overflow-hidden'>
                     <div className=' marquee w-full h-full absolute top-[50%] left-0 -translate-y-[50%] flex gap-4'>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-7xl font-bodoni'><h1>ALSO</h1></div>
+                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-5xl sm:text-7xl font-bigshoulders'><h1>AN</h1></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                     </div>
                 </div>
 
-                <div className='marquee-container relative w-[125%] h-[250px] flex mb-4 overflow-hidden'>
+                <div className='marquee-container relative w-[125%] h-[150px] sm:h-[250px] flex mb-4 overflow-hidden'>
                     <div className='marquee w-full h-full absolute top-[50%] -left-[15%] -translate-y-[50%] flex gap-4'>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-7xl font-bodoni'><h1>ALSO</h1></div>
+                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-5xl sm:text-7xl font-bigshoulders'><h1>Artist</h1></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
                     </div>
                 </div>
 
-                <div className='marquee-container relative w-[125%] h-[250px] flex mb-4 overflow-hidden'>
-                    <div className='marquee w-full h-full absolute top-[50%] left-0 -translate-y-[50%] flex gap-4'>
-                        <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                        <div className=' item flex-[1.5] flex justify-center items-center uppercase text-7xl font-bodoni'><h1>ALSO</h1></div>
-                        <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-8_cepsm6.jpg" alt="" /></div>
-                    </div>
-                </div>
             </div>
 
         </section>

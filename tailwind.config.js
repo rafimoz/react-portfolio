@@ -14,6 +14,7 @@ export default {
         aboreto: ['Aboreto', 'system-ui'],
         bodoni: ['Bodoni Moda', 'serif'],
         allura: ['Allura', 'cursive'],
+        bigshoulders: ['Big Shoulders Display'],
       },
     },
   },

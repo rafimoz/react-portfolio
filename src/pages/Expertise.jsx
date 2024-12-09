@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react'
+import { useDarkMode } from "../contexts/DarkModeContext";
+
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Expertise = () => {
+  const { dark } = useDarkMode(); // Access the dark mode state
     const undelLine = useRef([]);
     const expretiseRef = useRef([]);
     const containerRef = useRef(null);
@@ -77,7 +80,7 @@ const Expertise = () => {
                         <span> - </span>
                         <p className='text-end'>HTML, CSS, ,JAVASCIPT, JAVASCIPT, JAVASCIPT REACT</p>
                     </div>
-                    <p className='w-0 h-0.5 bg-primary' ref={(el) => (undelLine.current[0] = el)}></p>
+                    <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[0] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
                     <div className='grid grid-cols-[1fr_1fr_3fr]'>

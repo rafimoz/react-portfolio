@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react'
+import { useDarkMode } from "../contexts/DarkModeContext";
+
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Lenis from 'lenis'
@@ -6,6 +8,8 @@ import Lenis from 'lenis'
 
 
 const Home = () => {
+  const { dark } = useDarkMode(); // Access the dark mode state
+
 
   const lenis = useRef(null);
 
@@ -144,7 +148,7 @@ const Home = () => {
       <div ref={div2Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/30'></div>
 
       <div className='w-full relative h-full overflow-hidden backdrop-filter backdrop-blur-2xl'>
-        <div className='absolute z-10 bottom-0 w-full h-1/5 bg-gradient-to-t from-secondary to-transparent'></div>
+        <div className={`absolute z-10 bottom-0 w-full h-1/5 bg-gradient-to-t ${dark ? "from-secondary" : "from-primary"} to-transparent`} ></div>
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
           <img className='w-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521980/header-image_dhyltu.png" alt="2EQv5ge.png" border="0" />
         </div>
@@ -155,13 +159,13 @@ const Home = () => {
           </div>
         </div>
         <div className='absolute top-0 right-0' ref={curvedTextRef} >
-          <img className='scale-75 cursor-pointer rounded-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521979/header-curved-text_dvuywg.svg" alt="" />
+          <img className='scale-75 cursor-pointer rounded-full' src={`${dark ? "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521979/header-curved-text_dvuywg.svg" : "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733742205/curverTextDark_bchcp9.svg"}`} alt="" />
         </div>
 
         <div ref={navRef} className='absolute z-20 text-lg left-5 top-[-100px] flex flex-col sm:flex-row font-aboreto'>
-          <p onClick={() => scrollToSection('about')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>About</p>
-          <p onClick={() => scrollToSection('work')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>Works</p>
-          <p onClick={() => scrollToSection('contact')} className='text-primary/70 hover:text-primary cursor-pointer mr-10'>Join Me</p>
+          <p onClick={() => scrollToSection('about')} className=' hover:opacity-45 cursor-pointer mr-10 transition-all'>About</p>
+          <p onClick={() => scrollToSection('work')} className='hover:opacity-45 cursor-pointer mr-10 transition-all'>Works</p>
+          <p onClick={() => scrollToSection('contact')} className='hover:opacity-45 cursor-pointer mr-10 transition-all'>Join Me</p>
         </div>
       </div>
     </div>

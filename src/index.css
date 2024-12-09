@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Allura&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Allura&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&display=swap');
 
 @font-face {
   font-family: "Aboreto";
@@ -17,6 +17,11 @@
 @font-face {
   font-family: "Allura";
   src: url("./fonts/Allura-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  src: url("./fonts/BigShouldersDisplay-VariableFont_wght.ttf");
 }
 
 

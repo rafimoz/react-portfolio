@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useDarkMode } from "../contexts/DarkModeContext";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const RecentWork = () => {
+  const { dark } = useDarkMode(); // Access the dark mode state
+
   const navigate = useNavigate();
 
 
@@ -119,7 +122,7 @@ const RecentWork = () => {
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
                   <div className="flex h-[50vh] sm:h-full gsap__track" ref={gsapTrackRef}>
 
-                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574656/Home-Day_bnq0ya.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
@@ -129,7 +132,7 @@ const RecentWork = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574163/Group_3_c6riuk.png' alt='' className="w-full h-full object-cover" />
                       </div>
@@ -139,7 +142,7 @@ const RecentWork = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574167/Desktop_-_1_uao7yo.png' alt='' className="w-full h-full object-cover" />
                       </div>
@@ -149,7 +152,7 @@ const RecentWork = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
@@ -159,7 +162,7 @@ const RecentWork = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden bg-primary/80 text-secondary ml-5 gsap__item" >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
