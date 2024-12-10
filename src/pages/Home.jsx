@@ -8,8 +8,11 @@ import Lenis from 'lenis'
 
 
 const Home = () => {
-  const { dark } = useDarkMode(); // Access the dark mode state
+  const { dark, setDark } = useDarkMode(); // Access dark mode state
 
+  let setTheme = () => {
+    setDark((prevDark) => !prevDark);
+  };
 
   const lenis = useRef(null);
 
@@ -42,6 +45,7 @@ const Home = () => {
   const div1Ref = useRef(null);
   const div2Ref = useRef(null);
   const navRef = useRef(null);
+  const lightRef = useRef(null);
 
 
   useEffect(() => {
@@ -53,10 +57,10 @@ const Home = () => {
         x: gsap.utils.random(0, window.innerWidth - elementSize, true),
         y: gsap.utils.random(0, window.innerHeight - elementSize, true),
       });
-      gsap.to(element,{
+      gsap.to(element, {
         scale: 1,
-        duration:1,
-        ease:'power1.inOut',
+        duration: 1,
+        ease: 'power1.inOut',
       })
 
       const animate = () => {
@@ -84,16 +88,16 @@ const Home = () => {
   const curvedTextRef = useRef(null);
   useGSAP(() => {
     const tl = gsap.timeline({ repeat: -1 });
-    gsap.fromTo(curvedTextRef.current, 
-      { scale: 0, opacity: 0 }, 
+    gsap.fromTo(curvedTextRef.current,
+      { scale: 0, opacity: 0 },
       { scale: 1, opacity: 1, duration: 0.5, ease: 'linear' }
     );
-    
-      tl.to(curvedTextRef.current, {
-        rotation: 360,
-        duration: 10,
-        ease: "linear",
-      });
+
+    tl.to(curvedTextRef.current, {
+      rotation: 360,
+      duration: 10,
+      ease: "linear",
+    });
 
     curvedTextRef.current.addEventListener('mouseenter', () => {
       gsap.to(tl, { timeScale: 0.2, duration: 0.5 });
@@ -122,7 +126,14 @@ const Home = () => {
       duration: 1.5, // Animation duration
       delay: 0.8,
       ease: 'power3.out', // Smooth easing
+    })
 
+    gsap.to(lightRef.current, {
+      top: "-7%",
+      opacity: 1, // Fade in
+      duration: 1.5, // Animation duration
+      delay: 0.8,
+      ease: 'power3.out', // Smooth easing
     })
   }, []);
 
@@ -143,9 +154,14 @@ const Home = () => {
 
   return (
     <div id='home' className='relative w-full h-[100svh] sm:h-[100vh] overflow-hidden'>
+      <div ref={lightRef} className="absolute -top-[100%] left-[50%] -translate-x-[50%] z-50">
+        <img onClick={setTheme} className=" scale-75 leading-tight cursor-pointer" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/light_yjdtac.svg" alt="" />
+      </div>
 
-      <div ref={div1Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/40'></div>
-      <div ref={div2Ref} className='scale-0 absolute w-[400px] h-[400px] rounded-full bg-primary/30'></div>
+
+
+      <div ref={div1Ref} className={`scale-0 absolute w-[400px] h-[400px] rounded-full ${dark ? "bg-primary/40" : "bg-secondary/40"}`}></div>
+      <div ref={div2Ref} className={`scale-0 absolute w-[400px] h-[400px] rounded-full ${dark ? "bg-primary/30" : "bg-secondary/30"}`}></div>
 
       <div className='w-full relative h-full overflow-hidden backdrop-filter backdrop-blur-2xl'>
         <div className={`absolute z-10 bottom-0 w-full h-1/5 bg-gradient-to-t ${dark ? "from-secondary" : "from-primary"} to-transparent`} ></div>

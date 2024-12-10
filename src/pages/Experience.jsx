@@ -51,7 +51,7 @@ const Experience = () => {
     return (
         <section ref={containerRef} className='w-full h-[100svh] sm:h-[100vh] flex items-center justify-end px-7 overflow-hidden'>
             <div className=''>
-                <div ref={(el) => (experienceRef.current[0] = el)} className='text-5xl sm:text-8xl lg:text-9xl font-bodoni text-end'>
+                <div ref={(el) => (experienceRef.current[0] = el)} className='text-4xl sm:text-8xl lg:text-9xl font-bodoni text-end'>
                     <p>Experience</p>
                 </div>
 

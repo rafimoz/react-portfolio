@@ -31,7 +31,7 @@ function AppContent() {
   }, [isLoading]);
 
   return (
-    <div className={`app-root ${ dark ? "bg-secondary text-primary" : "bg-primary text-secondary"}`}>
+    <div className={`app-root ${dark ? "bg-secondary text-primary" : "bg-primary text-secondary"}`}>
       {isLoading ? (
         <Preloader />
       ) : (
@@ -47,7 +47,7 @@ function AppContent() {
                 <Expertise />
                 <RecentWork />
                 <Experience />
-                <Arts /> 
+                <Arts />
                 <Contact />
                 <Footer />
               </>

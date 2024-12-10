@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   return (
     <DarkModeContext.Provider value={{ dark, setDark }}>
