@@ -109,7 +109,7 @@ const RecentWork = () => {
   return (
     <section ref={containerRef} id='work' className="relative w-full overflow-hidden">
       <header ref={(el) => (workRef.current[1] = el)} className="mx-8  my-5">
-        <div className='text-5xl sm:text-8xl lg:text-9xl font-bodoni'>
+        <div className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
           <p>Recent Works</p>
         </div>
       </header>
@@ -120,16 +120,26 @@ const RecentWork = () => {
             <div className="h-full gsap_h">
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
-                  <div className="flex h-[50vh] sm:h-full gsap__track" ref={gsapTrackRef}>
+                  <div className="flex h-[60vh] sm:h-full gsap__track" ref={gsapTrackRef}>
+
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                        <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                          <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
+                        </div>
+                        <div className='flex flex-col justify-between items-center pl-3'>
+                          <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
+                          <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
+                    </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574656/Home-Day_bnq0ya.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
-                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
-                      </div>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
                     </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
@@ -137,9 +147,9 @@ const RecentWork = () => {
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574163/Group_3_c6riuk.png' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
-                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
-                      </div>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
                     </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
@@ -147,19 +157,9 @@ const RecentWork = () => {
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574167/Desktop_-_1_uao7yo.png' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
-                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#04</p>
-                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
-                      </div>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
                     </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
@@ -168,8 +168,18 @@ const RecentWork = () => {
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#05</p>
-                        <p className='w-full text-[12px] sm:text-sm font-aboreto text-end'>Lorem ratione uptatibus voluptatibus volupta voluptatibus voluptatibus voluptatibus mollitia aspernatur quia nihil. Asperiores aut harum enim tenetur placeat quis, voluptatem nostrum.</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
+                    </div>
+
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#06</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Lunch Box</span>A office lunch management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        </div>
                     </div>
 
                   </div>
