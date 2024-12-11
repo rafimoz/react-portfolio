@@ -88,7 +88,7 @@ const Expertise = () => {
                         <span> - </span>
                         <p className='text-end'>Node js, express js, Python, PHP .net, MongoDB, PostgreSQL</p>
                     </div>
-                    <p className='w-0 h-0.5 bg-primary' ref={(el) => (undelLine.current[1] = el)}></p>
+                    <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[1] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
                     <div className='grid grid-cols-[1fr_1fr_3fr]'>
@@ -96,7 +96,7 @@ const Expertise = () => {
                         <span> - </span>
                         <p className='text-end'>Figma, Adobe XD, Framer, spline, vs code, unity, unreal engine</p>
                     </div>
-                    <p className='w-0 h-0.5 bg-primary' ref={(el) => (undelLine.current[2] = el)}></p>
+                    <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[2] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
                     <div className='grid grid-cols-[1fr_1fr_3fr]'>
@@ -104,7 +104,7 @@ const Expertise = () => {
                         <span> - </span>
                         <p className='text-end'>JAVA, Python, JAVASCIPT, C++, C#</p>
                     </div>
-                    <p className='w-0 h-0.5 bg-primary' ref={(el) => (undelLine.current[3] = el)}></p>
+                    <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[3] = el)}></p>
                 </div>
             </div>
         </div>
