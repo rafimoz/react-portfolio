@@ -74,18 +74,18 @@ const About = () => {
       <div className="my-40 grid grid-cols-[1fr_3fr] sm:grid-cols-[1fr_2fr]">
         {/* Social links */}
         <div className="flex flex-col justify-end items-end px-4 gap-2" >
-          <a href="" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
+          <a href="https://www.linkedin.com/in/rafi-mozumder/" target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className="scale-50" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/linkedin_cbgzjj.png" alt="" />
           </a>
-          <a href="" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
+          <a href="https://github.com/rafimoz" target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className="scale-50" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/github_son5ik.png" alt="" />
           </a>
-          <a href="" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
+          <a href="https://www.instagram.com/raafi.jpeg/" target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className="scale-50" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854336/instagram_ec9kj7.png" alt="" />
           </a>
-          <a href="" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
+          <a href="https://drive.google.com/uc?export=download&id=1sW1Spkja2WpSHM87yrBK5nROqeBO7z1n" download target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className=" object-cover" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/cv_sixsib.png" alt="" />
-          </a>
+          </a> 
         </div>
 
         {/* Text content */}

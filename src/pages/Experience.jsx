@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useDarkMode } from "../contexts/DarkModeContext";
+
 
 const Experience = () => {
+    const { dark } = useDarkMode(); // Access the dark mode state
 
     const experienceRef = useRef([]);
     const containerRef = useRef(null);
@@ -57,7 +60,7 @@ const Experience = () => {
 
                 <div  ref={(el) => (experienceRef.current[1] = el)} className='flex mt-12'>
                     <div className='flex justify-end mr-4'>
-                        <p className=' w-1 h-full rounded-full bg-primary'></p>
+                        <p className={`w-1 h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
                     </div>
                     <div className='flex flex-col justify-between gap-10 h-full font-aboreto text-2xl'>
                         <div className=' leading-relaxed'>
