@@ -134,11 +134,11 @@ const RecentWork = () => {
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574656/Home-Day_bnq0ya.jpg' alt='' className="w-full h-full object-cover" />
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497395/209shots_so_osrv34.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Portfolio</span>A personal portfolio, inspired by 3D technology. To bring friendliness to users.</p>
                         </div>
                     </div>
 
@@ -148,36 +148,26 @@ const RecentWork = () => {
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>gari lagbe</span>A mobile application for buys and sell cars, created using react native technology. To bring friendliness to users.</p>
                         </div>
                     </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574167/Desktop_-_1_uao7yo.png' alt='' className="w-full h-full object-cover" />
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#04</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Photography</span>A portfolio for photographer, created using react and tailwind technology. To bring friendliness to users.</p>
                         </div>
                     </div>
 
                     <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497393/157_1x_shots_so_aswwzm.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#05</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
-                        </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#06</p>
                         <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Lunch Box</span>A office lunch management platform, created using mern stack technology. To bring friendliness to users.</p>
                         </div>
                     </div>
