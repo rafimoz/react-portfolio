@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, lazy ,useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cursor from "./components/Cursor";
 import Preloader from "./components/Preloader";
@@ -15,7 +15,7 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Works from "./pages/Works";
-import Arts from "./components/arts";
+const Arts = lazy(()=> import("./components/arts"));
 
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);

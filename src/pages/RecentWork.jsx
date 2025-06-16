@@ -108,68 +108,78 @@ const RecentWork = () => {
 
   return (
     <section ref={containerRef} id='work' className="relative w-full overflow-hidden">
-      <header ref={(el) => (workRef.current[1] = el)} className="mx-8  my-5">
-        <div className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
-          <p>Recent Works</p>
-        </div>
-      </header>
 
-      <main className="pb-[100px]">
-        <section className="h-[100vh] py-6 gsap_slider" ref={gsapSliderRef}>
+      <main>
+        <header ref={(el) => (workRef.current[1] = el)} className="mx-8">
+          <div className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
+            <p>Recent Works</p>
+          </div>
+        </header>
+        <section className="h-screen gsap_slider" ref={gsapSliderRef}>
           <div className="w-full h-full px-8">
             <div className="h-full gsap_h">
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
-                  <div className="flex h-[60vh] sm:h-full gsap__track" ref={gsapTrackRef}>
+                  <div className="flex gap-4 h-[50%] sm:h-[90%] gsap__track" ref={gsapTrackRef}>
 
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
-                        <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                          <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
-                        </div>
-                        <div className='flex flex-col justify-between items-center pl-3'>
-                          <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
-                          <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
-                        </div>
+                    <div className={`grid grid-cols-[5fr_2fr] w-[120vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
+                      </div>
                     </div>
 
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497393/157_1x_shots_so_aswwzm.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
                         <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Lunch Box</span>A office lunch management platform, created using mern stack technology. To bring friendliness to users.</p>
-                        </div>
+                      </div>
                     </div>
 
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497395/209shots_so_osrv34.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
                         <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Portfolio</span>A personal portfolio, inspired by 3D technology. To bring friendliness to users.</p>
-                        </div>
+                      </div>
                     </div>
 
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574163/Group_3_c6riuk.png' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#04</p>
                         <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>gari lagbe</span>A mobile application for buys and sell cars, created using react native technology. To bring friendliness to users.</p>
-                        </div>
+                      </div>
                     </div>
 
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} ml-5 gsap__item`} >
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
                       <div className='w-full h-full flex justify-center items-center overflow-hidden'>
                         <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
                       </div>
                       <div className='flex flex-col justify-between items-center pl-3'>
                         <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#05</p>
                         <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Photobooth</span>A portfolio for photographer, created using react and tailwind technology. To bring friendliness to users.</p>
-                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
+                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1750094822/git1bshglgukzhwydost.jpg' alt='' className="w-full h-full object-cover" />
+                      </div>
+                      <div className='flex flex-col justify-between items-center pl-3'>
+                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#06</p>
+                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Basha Bhara Hobe</span>Scan building QR for all available apartment photos & info. Smart home search starts here.</p>
+                      </div>
                     </div>
 
                   </div>
@@ -178,8 +188,7 @@ const RecentWork = () => {
             </div>
           </div>
         </section>
-
-        <section className="mt-[50px] font-aboreto">
+        <section className="font-aboreto">
           <div className="w-full px-8 flex items-center justify-end gap-3">
             <p className="w-full text-end text-sm sm:text-xl">
               View more of my works
@@ -188,6 +197,7 @@ const RecentWork = () => {
           </div>
         </section>
       </main>
+
     </section>
   );
 };
