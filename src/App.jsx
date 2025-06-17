@@ -15,7 +15,7 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Works from "./pages/Works";
-const Arts = lazy(()=> import("./components/arts"));
+import Arts from "./components/arts";
 
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);

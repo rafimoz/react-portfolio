@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDarkMode } from "../contexts/DarkModeContext";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const RecentWork = () => {
   const { dark } = useDarkMode(); // Access the dark mode state
-
+  const [portfolioData, setPortfolioData] = useState([]);
   const navigate = useNavigate();
-
+  const API_BASE_URL = 'http://localhost:5000/api'; // Ensure this matches your backend port
 
   const workRef = useRef([]);
   const containerRef = useRef(null);
@@ -18,7 +18,27 @@ const RecentWork = () => {
   const gsapTrackRef = useRef(null);
   const gsapSliderRef = useRef(null);
 
+  const fetchData = async () => {
+    try {
+      const [portfolioRes] = await Promise.all([
+        fetch(`${API_BASE_URL}/portfolio`),
+      ]);
+      if (!portfolioRes.ok) {
+        const errorText = await portfolioRes.text();
+        throw new Error(`Portfolio data fetch failed: ${portfolioRes.status} ${portfolioRes.statusText} - ${errorText}`);
+      }
+      const portfolioJson = await portfolioRes.json();
+      setPortfolioData(portfolioJson);
+    } catch (err) {
+      console.error("Failed to fetch data:", err);
+      setError(err.message); // Set the detailed error message to state
+    }
+  };
+
+
+
   useEffect(() => {
+    fetchData();
     const scrollTrig = () => {
       if (!gsapBlRef.current || !gsapTrackRef.current || !gsapSliderRef.current) return;
 
@@ -121,67 +141,28 @@ const RecentWork = () => {
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-[calc(100%+50px)] gsap__inner">
                   <div className="flex gap-4 h-[50%] sm:h-[90%] gsap__track" ref={gsapTrackRef}>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[120vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#01</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>carenavi</span>A health management platform, created using mern stack technology. To bring friendliness to users.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497393/157_1x_shots_so_aswwzm.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#02</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Lunch Box</span>A office lunch management platform, created using mern stack technology. To bring friendliness to users.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497395/209shots_so_osrv34.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#03</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Portfolio</span>A personal portfolio, inspired by 3D technology. To bring friendliness to users.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574163/Group_3_c6riuk.png' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#04</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>gari lagbe</span>A mobile application for buys and sell cars, created using react native technology. To bring friendliness to users.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#05</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Photobooth</span>A portfolio for photographer, created using react and tailwind technology. To bring friendliness to users.</p>
-                      </div>
-                    </div>
-
-                    <div className={`grid grid-cols-[5fr_2fr] w-[100vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
-                      <div className='w-full h-full flex justify-center items-center overflow-hidden'>
-                        <img src='https://res.cloudinary.com/dhlh7av5k/image/upload/v1750094822/git1bshglgukzhwydost.jpg' alt='' className="w-full h-full object-cover" />
-                      </div>
-                      <div className='flex flex-col justify-between items-center pl-3'>
-                        <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#06</p>
-                        <p className='w-full text-[10px] sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase text-[17px] sm:text-xl'>Basha Bhara Hobe</span>Scan building QR for all available apartment photos & info. Smart home search starts here.</p>
-                      </div>
-                    </div>
-
+                    {
+                      portfolioData.length > 0 && (
+                        portfolioData.map((project, index) => (
+                          <div key={index} className={`grid grid-cols-[5fr_2fr] w-[120vw] p-5 h-full sm:w-[60vw] sm:h-full overflow-hidden ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} gsap__item`} >
+                            <div className='w-full h-full flex justify-center items-center overflow-hidden'>
+                              <img src={project.image} alt='' className="w-full h-full object-cover" />
+                            </div>
+                            <div className='flex flex-col justify-between items-center pl-3'>
+                              <p className='w-full text-end text-4xl sm:text-6xl font-bodoni leading-none'>#{index + 1}</p>
+                              <div className='flex gap-3 flex-col items-end'>
+                                <p className='w-full text-xs sm:text-sm font-aboreto text-end flex flex-col'><span className='font-aboreto uppercase sm:text-xl text-sm'>{project.title}</span>{project.description}</p>
+                                <div className='flex items-center gap-1'>
+                                  <a href={project.link} target='_blank'>
+                                    <svg className='w-8' viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-right-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-310.000000, -1089.000000)" fill={`${dark ? '#181C14' : '#ECDFCC'}`}> <path d="M332.535,1105.88 L326.879,1111.54 C326.488,1111.93 325.855,1111.93 325.465,1111.54 C325.074,1111.15 325.074,1110.51 325.465,1110.12 L329.586,1106 L319,1106 C318.447,1106 318,1105.55 318,1105 C318,1104.45 318.447,1104 319,1104 L329.586,1104 L325.465,1099.88 C325.074,1099.49 325.074,1098.86 325.465,1098.46 C325.855,1098.07 326.488,1098.07 326.879,1098.46 L332.535,1104.12 C332.775,1104.36 332.85,1104.69 332.795,1105 C332.85,1105.31 332.775,1105.64 332.535,1105.88 L332.535,1105.88 Z M326,1089 C317.163,1089 310,1096.16 310,1105 C310,1113.84 317.163,1121 326,1121 C334.837,1121 342,1113.84 342,1105 C342,1096.16 334.837,1089 326,1089 L326,1089 Z" id="arrow-right-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      )
+                    }
                   </div>
                 </div>
               </div>
