@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className={`w-full h-[30vh] flex justify-between items-center font-aboreto border-t px-7 ${dark ? "border-primary/30 " : "border-secondary/30"}`}>
+            <div className={`w-full h-[30vh] flex justify-between items-center font-aboreto border-t sm:px-8 px-4 ${dark ? "border-primary/30 " : "border-secondary/30"}`}>
                 <div className='flex flex-col gap-3'>
                     <p>Social Links</p>
                     <div className='flex flex-col mt-4 text-sm'>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={`w-full text-center py-2 border-t ${dark ? "border-primary/30" : "border-secondary/30"}`}>
-                <p>All copyrights reserved @ Rafi Mozumder</p>
+                <p className={`sm:text-lg text-sm ${dark ? "text-primary/60" : "text-secondary/60"}`}>All copyrights reserved @ Rafi Mozumder</p>
             </div>
         </div>
     )

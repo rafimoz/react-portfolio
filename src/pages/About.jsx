@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDarkMode } from "../contexts/DarkModeContext";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,35 +6,14 @@ import SplitType from 'split-type';
 
 const About = () => {
   const { dark } = useDarkMode(); // Access the dark mode state
-  const [aboutData, setAboutData] = useState([]);
+
   const aboutRef = useRef([]);
   const containerRef = useRef(null);
   const splitTextRef = useRef(null);
-  const API_BASE_URL = 'http://localhost:5000/api'; // Ensure this matches your backend port
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const fetchData = async () => {
-    try {
-      const [aboutRes] = await Promise.all([
-        fetch(`${API_BASE_URL}/about`),
-      ]);
-
-      if (!aboutRes.ok) {
-        const errorText = await aboutRes.text(); // Get raw response for more detail
-        throw new Error(`About data fetch failed: ${aboutRes.status} ${aboutRes.statusText} - ${errorText}`);
-      }
-      const aboutJson = await aboutRes.json();
-      setAboutData(aboutJson);
-    } catch (err) {
-      console.error("Failed to fetch data:", err);
-      setError(err.message); // Set the detailed error message to state
-    }
-  };
-
   useEffect(() => {
-    fetchData();
-
     // Split text for animation
     if (splitTextRef.current) {
       const splitText = new SplitType(splitTextRef.current, { types: 'chars, words' });
@@ -91,10 +70,10 @@ const About = () => {
   }, []);
 
   return (
-    <section id='about' ref={containerRef} className="w-full h-fit flex justify-center items-center overflow-hidden">
-      <div className="my-40 grid grid-cols-[1fr_3fr] sm:grid-cols-[1fr_2fr]">
+    <section id='about' ref={containerRef} className="w-full h-fit flex justify-center items-center overflow-hidden sm:px-8 px-4">
+      <div className="my-40 grid grid-cols-[1fr_4fr] gap-4 sm:grid-cols-[1fr_2fr]">
         {/* Social links */}
-        <div className="flex flex-col justify-end items-end px-4 gap-2" >
+        <div className="flex flex-col justify-end items-end gap-2" >
           <a href="https://www.linkedin.com/in/rafi-mozumder/" target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className="scale-50" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/linkedin_cbgzjj.png" alt="" />
           </a>
@@ -106,11 +85,11 @@ const About = () => {
           </a>
           <a href="https://drive.google.com/uc?export=download&id=1sW1Spkja2WpSHM87yrBK5nROqeBO7z1n" download target="_blank" rel="noopener noreferrer" className={`scale-75 sm:scale-100 w-16 h-16 rounded-full ${dark ? "bg-primary" : "border border-secondary"}`}>
             <img className=" object-cover" src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733854337/cv_sixsib.png" alt="" />
-          </a>
+          </a> 
         </div>
 
         {/* Text content */}
-        <div className="w-full font-allura mr-2">
+        <div className="w-full mr-2">
           <p
             ref={(el) => (aboutRef.current[0] = el)}
             className="text-4xl sm:text-8xl lg:text-9xl mb-2 font-bodoni"
@@ -118,7 +97,12 @@ const About = () => {
             About me
           </p>
           <div>
-            <p ref={splitTextRef} className="text-xl sm:text-3xl font-aboreto">{aboutData.description}</p>
+            <p ref={splitTextRef} className="text-xl sm:text-3xl font-sans">
+              Hello! I'm Rafi Mozumder, a passionate and detail-oriented Front-End Developer with a strong foundation in React.js and a keen eye for UI/UX design. Currently pursuing a Bachelor of Computer Science with a stellar CGPA of 3.80, I have a proven track record of crafting seamless and intuitive digital experiences.
+              With expertise in HTML, CSS, JavaScript, and modern tools like TypeScript, Redux, and Tailwind CSS, I thrive at developing scalable web solutions. My portfolio showcases impactful projects, including a healthcare navigation platform (CareNavi) and a university website, reflecting my ability to solve real-world problems through technology.
+              Beyond coding, I enjoy designing interfaces with Figma and developing engaging experiences, whether it’s a 3D RPG game or an interactive web application. I'm constantly exploring the latest tech trends to stay ahead in this dynamic industry.
+              If you're looking for someone to bring your ideas to life through thoughtful design and robust development, let's connect! 😊
+            </p>
           </div>
         </div>
       </div>

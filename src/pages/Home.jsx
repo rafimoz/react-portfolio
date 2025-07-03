@@ -5,8 +5,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Lenis from 'lenis'
 
-
-
 const Home = () => {
   const { dark, setDark } = useDarkMode(); // Access dark mode state
 
