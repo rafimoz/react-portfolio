@@ -73,33 +73,33 @@ const Expertise = () => {
             <div ref={(el) => (expretiseRef.current[1] = el)}  className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
                 <p>My Expertise</p>
             </div>
-            <div className='flex flex-col font-sans mt-10 gap-8 text-[10px] sm:text-2xl'>
+            <div className='flex flex-col font-sans mt-10 gap-10 text-[10px] sm:text-2xl'>
                 <div className='flex flex-col gap-5'>
-                    <div className='grid grid-cols-[1fr_1fr_3fr]'>
+                    <div className='grid grid-cols-[2fr_1fr_5fr]'>
                         <p>front-end</p>
                         <span> - </span>
-                        <p className='text-end'>HTML, CSS, JAVASCIPT,  React.js, NEXT.JS</p>
+                        <p className='text-end'>Html, Css, Javascript, React.js, React-Native, Tailwindcss, Bootstrap</p>
                     </div>
                     <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[0] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
-                    <div className='grid grid-cols-[1fr_1fr_3fr]'>
+                    <div className='grid grid-cols-[2fr_1fr_5fr]'>
                         <p>Back-end</p>
                         <span> - </span>
-                        <p className='text-end'>Node js, express js, Python, PHP .net, MongoDB, PostgreSQL</p>
+                        <p className='text-end'>Node.js, Express.js, Python, MongoDB, MySql, Auth(JWT)</p>
                     </div>
                     <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[1] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
-                    <div className='grid grid-cols-[1fr_1fr_3fr]'>
+                    <div className='grid grid-cols-[2fr_1fr_5fr]'>
                         <p>Tools</p>
                         <span> - </span>
-                        <p className='text-end'>Figma, Adobe XD, Framer, spline, vs code, unity, unreal engine</p>
+                        <p className='text-end'>Git, Figma, Adobe Photoshop, Adobe Illustrator, Framer, Spline, Unity</p>
                     </div>
                     <p className={`w-0 h-0.5 ${dark ? "bg-primary" : "bg-secondary"}`} ref={(el) => (undelLine.current[2] = el)}></p>
                 </div>
                 <div className='flex flex-col gap-5'>
-                    <div className='grid grid-cols-[1fr_1fr_3fr]'>
+                    <div className='grid grid-cols-[2fr_1fr_5fr]'>
                         <p>Programming Lang</p>
                         <span> - </span>
                         <p className='text-end'>JAVA, Python, JAVASCIPT, C++, C#</p>

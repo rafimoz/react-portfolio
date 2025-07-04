@@ -58,16 +58,31 @@ const Experience = () => {
                     <p>Experience</p>
                 </div>
 
-                <div  ref={(el) => (experienceRef.current[1] = el)} className='flex mt-12'>
-                    <div className='flex justify-end mr-4'>
-                        <p className={`w-1 h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
+                <div ref={(el) => (experienceRef.current[1] = el)} className='flex flex-col gap-0 mt-20'>
+                    <div  className='flex'>
+                        <div className='flex justify-end mr-2'>
+                            <p className={`w-[3px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
+                        </div>
+                        <div className='flex flex-col justify-between h-full font-aboreto text-2xl mb-5'>
+                            <div className=' leading-relaxed'>
+                                <p className='font-bold text-lg sm:text-xl'><a href="https://www.quantanite.com/">Aerhe Development Federation</a></p>
+                                <p className='text-xs sm:text-lg'>Feb 2025 - Mar 2025</p>
+                                <p className='text-xs sm:text-lg'>Intern</p>
+                                <p className='text-xs sm:text-lg' >(Full-Time)</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className='flex flex-col justify-between gap-10 h-full font-aboreto text-2xl'>
-                        <div className=' leading-relaxed'>
-                            <p className='font-bold'><a href="https://www.quantanite.com/">quantanite</a></p>
-                            <p className='text-sm sm:text-lg'>Jan 2021 - Aug 2021</p>
-                            <p className='text-sm sm:text-lg'>Project Employee</p>
-                            <p className='text-sm sm:text-lg' >(Full-Time)</p>
+                    <div  className='flex'>
+                        <div className='flex justify-end mr-2'>
+                            <p className={`w-[3px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
+                        </div>
+                        <div className='flex flex-col justify-between h-full font-aboreto text-2xl mt-5'>
+                            <div className='leading-relaxed'>
+                                <p className='font-bold text-lg sm:text-xl'><a href="https://www.quantanite.com/">quantanite</a></p>
+                                <p className='text-xs sm:text-lg'>Jan 2021 - Aug 2021</p>
+                                <p className='text-xs sm:text-lg'>Project Employee</p>
+                                <p className='text-xs sm:text-lg' >(Full-Time)</p>
+                            </div>
                         </div>
                     </div>
                 </div>

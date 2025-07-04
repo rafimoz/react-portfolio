@@ -78,14 +78,14 @@ const arts = () => {
 
 
     return (
-        <section className='w-full overflow-x-hidden'>
+        <section className='w-full overflow-x-hidden h-fit'>
 
-            <div className=' h-[150vh] flex flex-col justify-center'>
+            <div className='flex flex-col justify-center'>
 
                 <div className='marquee-container relative w-[150%] h-[200px] sm:h-[350px] flex mb-2 overflow-hidden'>
                     <div className='marquee w-full h-full absolute top-[50%] -left-[15%] -translate-y-[50%] flex gap-2' >
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>ALSO</h1></div>
+                        <div className='item flex-[1] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>ALSO</h1></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034318_ck5frr.png" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034358_okj5a0.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-7_nzy5sl.jpg" alt="" /></div>
@@ -97,15 +97,15 @@ const arts = () => {
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034358_okj5a0.jpg" alt="" /></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521620/1733521522021_ngzfob.jpg" alt="" /></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-2_rlmiib.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>AN</h1></div>
+                        <div className='item flex-[1] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>AN</h1></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-2_rlmiib.jpg" alt="" /></div>
                     </div>
                 </div>
 
-                <div className='marquee-container relative w-[150%] h-[200px] sm:h-[350px] flex mb-2 overflow-hidden'>
+                <div className='marquee-container relative w-[150%] h-[200px] sm:h-[350px] flex overflow-hidden'>
                     <div className='marquee w-full h-full absolute top-[50%] -left-[15%] -translate-y-[50%] flex gap-2'>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-6_gsyoe8.jpg" alt="" /></div>
-                        <div className='item flex-[1.5] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>Artist</h1></div>
+                        <div className='item flex-[1] flex justify-center items-center uppercase text-4xl sm:text-8xl font-bigshoulders'><h1>Artist</h1></div>
                         <div className='item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-5_xlkmug.jpg" alt="" /></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg" alt="" /></div>
                         <div className=' item flex-1 flex justify-center items-center'><img className='w-full h-full object-cover' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg" alt="" /></div>

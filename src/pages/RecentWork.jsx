@@ -163,14 +163,15 @@ const RecentWork = () => {
         gsap__item
         relative
       `}>
-        <div className='w-full flex justify-center items-center overflow-hidden'>
+        <div className='w-full flex justify-center items-center overflow-hidden relative'>
           <img src={image} alt={title} className="object-cover h-full w-full" />
+          <div className={`absolute inset-0 bg-gradient-to-br ${dark ? "from-primary to-primary/0" : "from-secondary to-secondary/0"}`}></div>
         </div>
         {/* Adjusted position for #id. Made it absolute within the relative parent. */}
-        <p className={`text-4xl sm:text-6xl font-bodoni leading-none absolute top-4 left-4 ${isExpanded ? "hidden" : "block"}`}>#{id}</p>
+        <p className={`text-4xl sm:text-6xl font-bodoni leading-none absolute sm:top-4 top-2 sm:left-4 left-2 ${isExpanded ? "hidden" : "block"}`}>#{id}</p>
         {/* The click handler is now on this card's specific div */}
         <div className='sm:p-4 p-2 cursor-pointer mb-8'> {/* Added cursor-pointer for better UX */}
-          <p className='font-aboreto uppercase text-[15px] flex items-center gap-1 sm:text-xl'>{title} - 
+          <p className='font-aboreto uppercase text-[15px] flex items-center gap-1 sm:text-xl'>{title} -
             <a href={link} target='_blank' onClick={(e) => e.stopPropagation()}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
@@ -204,7 +205,7 @@ const RecentWork = () => {
             <div className="h-full gsap_h">
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-full gsap__inner">
-                  <div className="flex py-4 sm:py-8 gap-4 sm:gap-5 h-[50vh] sm:h-full gsap__track" ref={gsapTrackRef}>
+                  <div className="flex py-4 sm:py-8 gap-4 sm:gap-5 h-[60svh] sm:h-full gsap__track" ref={gsapTrackRef}>
                     {workData.map((work) => (
                       <WorkCard
                         key={work.id}
