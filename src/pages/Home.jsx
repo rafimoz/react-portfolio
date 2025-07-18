@@ -164,7 +164,7 @@ const Home = () => {
       <div className='w-full relative h-full overflow-hidden backdrop-filter backdrop-blur-2xl'>
         <div className={`absolute z-10 bottom-0 w-full h-1/5 bg-gradient-to-t ${dark ? "from-secondary" : "from-primary"} to-transparent`} ></div>
         <div className='sm:w-1/3 w-3/4 absolute bottom-0 sm:-right-2 -right-12 translate-x-52 opacity-0' ref={headerImg}>
-          <img className='w-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521980/header-image_dhyltu.png" alt="2EQv5ge.png" border="0" />
+          <img className='w-full' src="https://res.cloudinary.com/dhlh7av5k/image/upload/v1752881696/ai_repair_20250719053044878_vioplt.png" alt="2EQv5ge.png" border="0" />
         </div>
         <div className='absolute flex items-center flex-col z-10 bottom-0 w-full opacity-0 translate-y-32' ref={headerRef}>
           <div>
