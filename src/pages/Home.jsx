@@ -229,7 +229,7 @@ const Home = () => {
           </svg>
         </button>
 
-        <div ref={navRef} className='absolute z-10 text-lg left-4 -top-20 flex flex-col sm:flex-row font-aboreto'>
+        <div ref={navRef} className='absolute z-10 text-lg left-4 flex flex-col sm:flex-row font-aboreto'>
           <p onClick={() => scrollToSection('about')} className=' hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>About</p>
           <p onClick={() => scrollToSection('work')} className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>Works</p>
           <p onClick={() => scrollToSection('contact')} className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>Join Me</p>
