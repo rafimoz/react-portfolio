@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section id="contact" className='w-full flex flex-row justify-end items-center py-[100px] sm:px-8 px-4'>
     <div className="w-full sm:w-[50%]">
-      <h2 className='w-full font-bodoni text-4xl sm:text-8xl lg:text-9xl mb-14 text-center sm:text-end'>Contact</h2>
+      <h2 className='w-full font-bodoni text-5xl sm:text-7xl mb-14 text-center sm:text-end'>Contact</h2>
       <div className="mail w-full">
         <span className='sm:text-xl text-lg font-aboreto'>MAIL ME</span>
         <form className='sm:mt-4 mt-2 flex flex-col sm:gap-6 gap-4' action="https://api.web3forms.com/submit" method="POST">

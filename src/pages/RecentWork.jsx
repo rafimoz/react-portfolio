@@ -158,7 +158,7 @@ const RecentWork = () => {
       <div className={`
         grid 
         ${isExpanded ? "grid-rows-[0fr_5fr]" : "grid-rows-[5fr_1fr]"} 
-        w-[90vw] h-full sm:w-[60vw] sm:h-full overflow-hidden 
+        w-[90vw] h-full sm:w-[40vw] overflow-hidden 
         ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} 
         gsap__item
         relative
@@ -193,19 +193,20 @@ const RecentWork = () => {
 
   return (
     <section ref={containerRef} id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
-      <header ref={(el) => (workRef.current[1] = el)}>
-        <div className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
-          <p>Recent Works</p>
-        </div>
-      </header>
 
       <main>
-        <section className="h-[100vh] gsap_slider" ref={gsapSliderRef}>
-          <div className="w-full h-full">
+        <section className="sm:h-[100vh] h-[80vh] flex flex-col justify-center gsap_slider" ref={gsapSliderRef}>
+          <header >
+            <div className='text-5xl sm:text-7xl font-bodoni'>
+              <p>Recent Works</p>
+            </div>
+          </header>
+
+          <div className="w-full sm:h-[75%] h-[65%]">
             <div className="h-full gsap_h">
               <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
                 <div className="flex items-center h-full overflow-hidden w-full gsap__inner">
-                  <div className="flex py-4 sm:py-8 gap-4 sm:gap-5 h-[60svh] sm:h-full gsap__track" ref={gsapTrackRef}>
+                  <div className="flex py-4 sm:py-6 gap-4 h-full gsap__track" ref={gsapTrackRef}>
                     {workData.map((work) => (
                       <WorkCard
                         key={work.id}
@@ -221,18 +222,18 @@ const RecentWork = () => {
               </div>
             </div>
           </div>
-        </section>
 
-        <section className="font-aboreto">
-          <div className="w-full sm:px-8 px-4 flex items-center justify-end gap-2">
-            <p className="w-full text-end text-sm sm:text-xl">
+          <div className="w-full sm:px-8 px-4 flex items-center justify-end gap-2 font-aboreto">
+            <p className="w-full text-end text-sm sm:text-lg">
               View more of my works
             </p>
             <button
-              onClick={() => navigate("/works")}
-              className='w-14 h-12 sm:w-16 sm:h-16 p-1 text-sm sm:text-xl text-center rounded-full border border-primary hover:bg-primary hover:border-secondary hover:text-secondary transition-all'
+              // onClick={() => navigate("/works")}
+              className='w-10 h-10'
             >
-              here
+              <svg className={`w-full fill-current border border-current rounded-full`} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 49C35.4477 49 35 49.4477 35 50C35 50.5523 35.4477 51 36 51L36 49ZM63.7071 50.7071C64.0976 50.3166 64.0976 49.6834 63.7071 49.2929L57.3431 42.9289C56.9526 42.5384 56.3195 42.5384 55.9289 42.9289C55.5384 43.3195 55.5384 43.9526 55.9289 44.3431L61.5858 50L55.9289 55.6569C55.5384 56.0474 55.5384 56.6805 55.9289 57.0711C56.3195 57.4616 56.9526 57.4616 57.3431 57.0711L63.7071 50.7071ZM36 51L63 51L63 49L36 49L36 51Z" />
+              </svg>
             </button>
           </div>
         </section>

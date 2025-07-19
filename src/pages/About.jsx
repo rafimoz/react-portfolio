@@ -21,12 +21,11 @@ const About = () => {
       gsap.from(splitText.chars, {
         scrollTrigger: {
           trigger: splitTextRef.current,
-          start: 'top 50%',
-          end: 'bottom 50%',
+          start: 'top 60%',
+          end: 'bottom 60%',
           scrub: true,
         },
         opacity: 0,
-        y: 20,
         stagger: 0.1,
         ease: 'power2.out',
       });
@@ -92,12 +91,12 @@ const About = () => {
         <div className="w-full mr-2">
           <p
             ref={(el) => (aboutRef.current[0] = el)}
-            className="text-4xl sm:text-8xl lg:text-9xl mb-2 font-bodoni"
+            className="text-5xl sm:text-7xl mb-2 font-bodoni"
           >
             About me
           </p>
           <div>
-            <p ref={splitTextRef} className="text-xl sm:text-3xl font-sans">
+            <p ref={splitTextRef} className="text-xl sm:text-3xl font-normal">
               Hello! I'm Rafi Mozumder, a passionate and detail-oriented Front-End Developer with a strong foundation in React.js and a keen eye for UI/UX design. Currently pursuing a Bachelor of Computer Science with a stellar CGPA of 3.80, I have a proven track record of crafting seamless and intuitive digital experiences.
               With expertise in HTML, CSS, JavaScript, and modern tools like TypeScript, Redux, and Tailwind CSS, I thrive at developing scalable web solutions. My portfolio showcases impactful projects, including a healthcare navigation platform (CareNavi) and a university website, reflecting my ability to solve real-world problems through technology.
               Beyond coding, I enjoy designing interfaces with Figma and developing engaging experiences, whether it’s a 3D RPG game or an interactive web application. I'm constantly exploring the latest tech trends to stay ahead in this dynamic industry.

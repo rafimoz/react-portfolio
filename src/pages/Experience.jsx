@@ -54,14 +54,14 @@ const Experience = () => {
     return (
         <section ref={containerRef} className='w-full h-[100svh] sm:h-[100vh] flex items-center justify-end overflow-hidden sm:px-8 px-4'>
             <div>
-                <div ref={(el) => (experienceRef.current[0] = el)} className='text-4xl sm:text-8xl lg:text-9xl font-bodoni text-end'>
+                <div ref={(el) => (experienceRef.current[0] = el)} className='text-5xl sm:text-7xl font-bodoni text-end'>
                     <p>Experience</p>
                 </div>
 
                 <div ref={(el) => (experienceRef.current[1] = el)} className='flex flex-col gap-0 mt-20'>
                     <div  className='flex'>
                         <div className='flex justify-end mr-2'>
-                            <p className={`w-[3px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
+                            <p className={`w-[2px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
                         </div>
                         <div className='flex flex-col justify-between h-full font-aboreto text-2xl mb-5'>
                             <div className=' leading-relaxed'>
@@ -74,7 +74,7 @@ const Experience = () => {
                     </div>
                     <div  className='flex'>
                         <div className='flex justify-end mr-2'>
-                            <p className={`w-[3px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
+                            <p className={`w-[2px] h-full rounded-full ${dark ? "bg-primary" : "bg-secondary"}`}></p>
                         </div>
                         <div className='flex flex-col justify-between h-full font-aboreto text-2xl mt-5'>
                             <div className='leading-relaxed'>

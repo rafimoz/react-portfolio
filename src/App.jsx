@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Works from "./pages/Works";
 import Arts from "./components/arts";
+import Services from "./pages/Services";
 
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);
@@ -45,6 +46,7 @@ function AppContent() {
                 <Titles />
                 <About />
                 <Expertise />
+                <Services />
                 <RecentWork />
                 <Experience />
                 <Arts />

@@ -70,7 +70,7 @@ const Expertise = () => {
   return (
     <section ref={containerRef} id='expertise' className='w-full overflow-hidden sm:px-8 px-4'>
         <div className='my-52'>
-            <div ref={(el) => (expretiseRef.current[1] = el)}  className='text-4xl sm:text-8xl lg:text-9xl font-bodoni'>
+            <div ref={(el) => (expretiseRef.current[1] = el)}  className='text-5xl sm:text-7xl font-bodoni'>
                 <p>My Expertise</p>
             </div>
             <div className='flex flex-col font-sans mt-10 gap-10 text-[10px] sm:text-2xl'>

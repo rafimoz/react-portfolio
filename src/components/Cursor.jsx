@@ -44,7 +44,7 @@ const Cursor = () => {
     window.addEventListener('mouseover', onMouseEnter);
 
     // Add hover events for text elements
-    const textElements = document.querySelectorAll('p, span, h1, h2, h3, h4, h5, h6, a');
+    const textElements = document.querySelectorAll('p, span, h1, h2, h3, h4, h5, h6, a, svg');
     textElements.forEach((el) => {
       el.addEventListener('mouseenter', onTextHover);
       el.addEventListener('mouseleave', onTextHoverOut);
