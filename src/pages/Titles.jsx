@@ -15,7 +15,7 @@ const Titles = () => {
                 },
                 {
                     x: 0,
-                    duration: 1.2,
+                    duration: 1,
                     ease: 'power3.out',
                     delay: index * 0.2
                 },

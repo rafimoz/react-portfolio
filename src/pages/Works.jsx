@@ -6,12 +6,12 @@ const Works = () => {
   return (
     <section className='w-full'>
       <main
-        className='p-2 min-h-screen relative' // Added min-h-screen and relative for positioning
+        className='sm:p-8 p-4 min-h-screen relative' // Added min-h-screen and relative for positioning
       >
         <div className='relative z-10'> {/* Added z-10 to ensure content is above the background */}
           <div className='w-full flex justify-between items-end p-2 pt-20 bg-primary rounded-xl'>
             <h1 className='sm:text-6xl text-4xl text-secondary'>Carenavi</h1>
-            <button className='px-3 py-2 h-fit sm:text-lg text-sm rounded-lg bg-secondary border-white'>visit website</button>
+            <button className='px-3 py-2 h-fit sm:text-lg text-sm rounded-full bg-secondary border-white'>visit website</button>
           </div>
 
           <div className='sm:flex grid grid-cols-2 sm:justify-between gap-4 py-4'>

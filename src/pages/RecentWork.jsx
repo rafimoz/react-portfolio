@@ -228,7 +228,7 @@ const RecentWork = () => {
               View more of my works
             </p>
             <button
-              // onClick={() => navigate("/works")}
+              onClick={() => navigate("/allworks")}
               className='w-10 h-10'
             >
               <svg className={`w-full fill-current border border-current rounded-full`} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

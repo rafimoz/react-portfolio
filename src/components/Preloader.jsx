@@ -9,13 +9,18 @@ const Preloader = () => {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    // Disable scrolling during the preloader
     document.body.style.overflow = "hidden";
-
     let currentValue = 0;
+    let fakeLoadingComplete = false;
+    let realAssetsLoaded = false;
 
+    // 1. Fake counter loader
     function updateCounter() {
-      if (currentValue >= 100) return;
+      if (currentValue >= 100) {
+        fakeLoadingComplete = true;
+        maybeStartExitAnimation();
+        return;
+      }
 
       currentValue += Math.floor(Math.random() * 10) + 1;
       if (currentValue > 100) currentValue = 100;
@@ -30,29 +35,51 @@ const Preloader = () => {
 
     updateCounter();
 
-    gsap.to(counterRef.current, {
-      duration: 0.25,
-      delay: 3,
-      opacity: 0,
-      onComplete: () => {
-        if (counterRef.current) counterRef.current.style.display = "none";
-      },
-    });
+    // 2. Wait for real asset load (window.onload)
+    const onRealLoad = () => {
+      realAssetsLoaded = true;
+      maybeStartExitAnimation();
+    };
 
-    gsap.to(loadingBar.current, {
-      duration: 1.5,
-      delay: 3,
-      height: 0,
-      stagger: { amount: 0.5 },
-      ease: "power4.inOut",
-      onComplete: () => {
-        setIsFadingOut(true);
-        setTimeout(() => {
-          setLoading(false); // Notify the app that loading is complete
-          document.body.style.overflow = "auto"; // Re-enable scrolling
-        }, 500); // Match this duration to your fade-out transition in CSS
-      },
-    });
+    if (document.readyState === "complete") {
+      onRealLoad();
+    } else {
+      window.addEventListener("load", onRealLoad);
+    }
+
+    // 3. Exit logic when both done
+    function maybeStartExitAnimation() {
+      if (!(fakeLoadingComplete && realAssetsLoaded)) return;
+
+      // Counter fade out
+      gsap.to(counterRef.current, {
+        duration: 0.25,
+        opacity: 0,
+        onComplete: () => {
+          if (counterRef.current) counterRef.current.style.display = "none";
+        },
+      });
+
+      // Bars animation
+      gsap.to(loadingBar.current, {
+        duration: 1.5,
+        height: 0,
+        stagger: { amount: 0.5 },
+        ease: "power4.inOut",
+        onComplete: () => {
+          setIsFadingOut(true);
+          setTimeout(() => {
+            setLoading(false); // Reveal app
+            document.body.style.overflow = "auto";
+          }, 500);
+        },
+      });
+    }
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("load", onRealLoad);
+    };
   }, [setLoading]);
 
   return (
@@ -71,7 +98,7 @@ const Preloader = () => {
             ></div>
           ))}
         </div>
-        <div className="text-6xl absolute bottom-5 right-5 font-aboreto text-secondary">
+        <div className="text-6xl absolute bottom-5 right-5 font-light text-secondary">
           <h1 ref={counterRef} className="counter">
             0%
           </h1>

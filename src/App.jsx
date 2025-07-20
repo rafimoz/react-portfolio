@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, lazy ,useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Cursor from "./components/Cursor";
 import Preloader from "./components/Preloader";
+
 import { LoadingContext, LoadingProvider } from "./contexts/LoadingContext";
-import { DarkModeProvider } from "./contexts/DarkModeContext";
-import { useDarkMode } from "./contexts/DarkModeContext";
+import { DarkModeProvider, useDarkMode } from "./contexts/DarkModeContext";
 
 import Home from "./pages/Home";
 import Titles from "./pages/Titles";
@@ -17,18 +18,15 @@ import Footer from "./components/Footer";
 import Works from "./pages/Works";
 import Arts from "./components/arts";
 import Services from "./pages/Services";
+import AllWorks from "./pages/AllWorks";
 
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);
-  const { dark, setDark } = useDarkMode(); // Access dark mode state
+  const { dark } = useDarkMode();
 
   useEffect(() => {
-    // Initially disable scrolling
-    if (isLoading) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto"; // Re-enable scrolling after preloader
-    }
+    // Lock scroll during loading
+    document.body.style.overflow = isLoading ? "hidden" : "auto";
   }, [isLoading]);
 
   return (
@@ -56,6 +54,7 @@ function AppContent() {
             }
           />
           <Route path="/works" element={<Works />} />
+          <Route path="/allworks" element={<AllWorks />} />
         </Routes>
       )}
     </div>

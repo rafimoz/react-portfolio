@@ -70,13 +70,13 @@ const ServiceItem = ({ title, imageUrl, description }) => { // Added description
             {/* description text */}
             <p
                 ref={descriptionTextRef} // Attach ref to description
-                className={`absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 sm:text-xs text-[8px] w-20 sm:w-80 line-clamp-2 overflow-hidden ${dark ? 'text-primary/70' : 'text-secondary/70'}`} // Added text color for better visibility
+                className={`absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 sm:text-sm text-[8px] w-20 sm:w-80 line-clamp-2 overflow-hidden ${dark ? 'text-primary/70' : 'text-secondary/70'}`} // Added text color for better visibility
             >
                 {description} {/* Use the description prop */}
             </p>
 
             <div
-                className='absolute sm:w-[250px] w-[130px] sm:h-[150px] h-[90px] rounded-xl overflow-hidden pointer-events-none top-[50%] left-[80%] -translate-x-1/2 -translate-y-1/2'
+                className='absolute sm:w-[220px] w-[120px] sm:h-[150px] h-[80px] rounded-xl overflow-hidden pointer-events-none top-[50%] left-[80%] -translate-x-1/2 -translate-y-1/2'
                 ref={imageContainerRef}
             >
                 <img className='object-cover w-full h-full' src={imageUrl} alt={title} />
@@ -103,7 +103,7 @@ const Services = () => {
         },
         {
             id: 3,
-            title: 'Mobile application',
+            title: 'Mobile app',
             imageUrl: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1752942125/honayumkdhf4bq1c7zxm.jpg',
             description: 'Developing native and cross-platform mobile apps for all devices.'
         },
