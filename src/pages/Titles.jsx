@@ -50,7 +50,7 @@ const Titles = () => {
     }, []);
 
     return (
-        <div ref={containerRef} className='w-full flex justify-center items-center'>
+        <section ref={containerRef} className='w-full flex justify-center items-center'>
             <div className='w-full text-center my-56  text-5xl sm:text-8xl overflow-hidden '>
                 <div>
                     <p className='font-allura cursor-default'>A</p>
@@ -70,7 +70,7 @@ const Titles = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

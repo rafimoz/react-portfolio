@@ -193,7 +193,6 @@ const RecentWork = () => {
 
   return (
     <section ref={containerRef} id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
-
       <main>
         <section className="sm:h-[100vh] h-[80vh] flex flex-col justify-center gsap_slider" ref={gsapSliderRef}>
           <header >

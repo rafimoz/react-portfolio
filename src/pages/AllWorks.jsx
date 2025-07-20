@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const AllWorks = () => {
     // Organize your work data into categories, matching the existing workData structure
     const workDataCategorized = {
-        'all': [ // 'all' category to show all works by default or as an option
+        'all': [
             {
                 id: '01',
                 image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1750406480/pawambhbvcjck2dlel3p.jpg',
@@ -111,19 +111,19 @@ const AllWorks = () => {
     ];
 
     return (
-        <section className='py-12 sm:py-10 px-4 sm:px-8 min-h-screen'>
+        <section className='py-10 px-4 sm:px-8'>
             <div className='max-w-7xl mx-auto'>
-                <h1 className='text-4xl sm:text-5xl md:text-6xl font-bodoni text-center text-primary mb-12 leading-tight'>
-                    Projects & Insights
+                <h1 className='text-5xl sm:text-7xl font-bodoni text-center text-primary mb-12 leading-tight'>
+                   -Projects-
                 </h1>
 
                 {/* Tab Navigation */}
-                <div className='flex justify-center mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide'>
+                <div className='flex gap-4 sm:justify-center mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide'>
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`px-4 py-2 mx-2 text-md rounded-lg font-aboreto transition-all duration-300 ease-in-out
+                            className={`px-4 py-2 sm:text-md text-sm rounded-lg font-aboreto transition-all duration-300 ease-in-out
                                 ${activeTab === tab.id
                                     ? 'bg-primary text-secondary shadow-md' // Active tab uses your `primary` background and `secondary` text
                                     : 'bg-secondary text-primary hover:bg-primary/10' // Inactive tab uses `secondary` background, `primary` text, and a subtle hover
@@ -144,18 +144,15 @@ const AllWorks = () => {
                             key={work.id}
                             className='block rounded-lg group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out bg-primary'
                         >
-                            <div className='relative overflow-hidden h-60'>
+                            <div className='relative overflow-hidden h-64'>
                                 <img
                                     className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
                                     src={work.image}
                                     alt={work.title}
                                 />
-                                {/* Overlay gradient now uses 'from-primary' to match your theme */}
-                                <div className='absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end px-4 py-2'>
-                                    <h3 className='text-xl font-semibold text-secondary'>{work.title}</h3>
-                                </div>
                             </div>
-                            <div className='p-4 flex flex-col gap-3'>
+                            <div className='p-4 flex flex-col gap-2'>
+                                <h3 className='text-xl font-semibold text-secondary'>{work.title}</h3>
                                 {/* Description text color using secondary/80 */}
                                 <p className='text-secondary/80 line-clamp-2 text-sm'>
                                     {work.description}

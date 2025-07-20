@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Cursor from "./components/Cursor";
 import Preloader from "./components/Preloader";
+import ScrollToTop from "./components/ScrollToTop"; // Import the new component
 
 import { LoadingContext, LoadingProvider } from "./contexts/LoadingContext";
 import { DarkModeProvider, useDarkMode } from "./contexts/DarkModeContext";
@@ -34,28 +35,31 @@ function AppContent() {
       {isLoading ? (
         <Preloader />
       ) : (
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Cursor />
-                <Home />
-                <Titles />
-                <About />
-                <Expertise />
-                <Services />
-                <RecentWork />
-                <Experience />
-                <Arts />
-                <Contact />
-                <Footer />
-              </>
-            }
-          />
-          <Route path="/works" element={<Works />} />
-          <Route path="/allworks" element={<AllWorks />} />
-        </Routes>
+        <>
+          <ScrollToTop />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Cursor />
+                  <Home />
+                  <Titles />
+                  <About />
+                  <Expertise />
+                  <Services />
+                  <RecentWork />
+                  <Experience />
+                  <Arts />
+                  <Contact />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/works" element={<Works />} />
+            <Route path="/allworks" element={<AllWorks />} />
+          </Routes>
+        </>
       )}
     </div>
   );
