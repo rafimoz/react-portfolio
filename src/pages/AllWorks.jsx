@@ -154,6 +154,14 @@ const AllWorks = () => {
             description: 'Explored a dynamic and modern UI. Check out the full pixels attached!',
             category: 'ui-ux',
         },
+        {
+            id: '20',
+            image: 'https://cdn.dribbble.com/userupload/44325982/file/3dd92308190c4ab56fa1c683be96ee87.png?resize=1024x768&vertical=center',
+            title: 'A conceptual poster design titled - Motion',
+            link: 'https://dribbble.com/shots/25737480-Makeit-Landing-Page',
+            description: 'This project, Motion, is a conceptual poster design created in Adobe Photoshop. The primary goal was to visualize the abstract idea of motion in a compelling, static image. This was achieved by blending a high-contrast, blurred photograph of a person with large, rhythmic typography. The letterforms are positioned to interact with the figure, creating a sense of dynamic flow and continuity.',
+            category: 'graphic-designs',
+        },
     ];
 
     const [activeTab, setActiveTab] = useState('all');
