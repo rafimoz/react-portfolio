@@ -68,12 +68,12 @@ const Expertise = () => {
 
 
   return (
-    <section ref={containerRef} id='expertise' className='w-full overflow-hidden sm:px-8 px-4'>
-        <div className='my-52'>
+    <section ref={containerRef} id='expertise' className='w-full h-screen overflow-hidden sm:px-8 px-4'>
+        <div className='h-full flex flex-col justify-center'>
             <div ref={(el) => (expretiseRef.current[1] = el)}  className='text-5xl sm:text-7xl font-bodoni'>
                 <p>My Expertise</p>
             </div>
-            <div className='flex flex-col font-sans mt-10 gap-10 text-[10px] sm:text-2xl'>
+            <div className='flex flex-col font-sans mt-10 gap-10 text-xs sm:text-2xl'>
                 <div className='flex flex-col gap-5'>
                     <div className='grid grid-cols-[2fr_1fr_5fr]'>
                         <p>front-end</p>

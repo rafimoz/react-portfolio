@@ -90,7 +90,7 @@ const AllWorks = () => {
             description: "This design was created to evoke a feeling of sophisticated comfort and possibility, inviting viewers to imagine themselves living in a space where modern elegance meets serene natural beauty, truly making their big dreams a tangible reality.",
             category: 'graphic-designs',
         },
-         {
+        {
             id: '12',
             image: 'https://cdn.dribbble.com/userupload/34649015/file/original-fe02df254ddb794f7f465c221182dff8.jpg?resize=600x819&vertical=center',
             title: 'ONE PIECE - POSTER',
@@ -199,13 +199,9 @@ const AllWorks = () => {
                     ))}
                 </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4'>
                     {filteredWorks.map((work) => (
-                        <a
-                            href={work.link}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            key={work.id}
+                        <div
                             className='block rounded-lg group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out bg-primary'
                         >
                             <div className='relative overflow-hidden h-64'>
@@ -220,14 +216,20 @@ const AllWorks = () => {
                                 <p className='text-secondary/80 line-clamp-2 text-sm'>
                                     {work.description}
                                 </p>
-                                <span className='mt-2 inline-flex items-center text-secondary font-medium text-sm group-hover:underline'>
+                                <a
+                                    href={work.link}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    key={work.id}
+                                    className='mt-2 inline-flex items-center text-secondary font-medium text-sm group-hover:underline'
+                                >
                                     View Project
                                     <svg className='ml-1 w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7' />
                                     </svg>
-                                </span>
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     ))}
                 </div>
             </div>

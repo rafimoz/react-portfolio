@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Lenis from "lenis";
 
 import Cursor from "./components/Cursor";
 import Preloader from "./components/Preloader";
-import ScrollToTop from "./components/ScrollToTop"; // Import the new component
 
 import { LoadingContext, LoadingProvider } from "./contexts/LoadingContext";
 import { DarkModeProvider, useDarkMode } from "./contexts/DarkModeContext";
@@ -21,12 +21,36 @@ import Arts from "./components/arts";
 import Services from "./pages/Services";
 import AllWorks from "./pages/AllWorks";
 
+import useLenisAnchorScroll from "./hook/useLenisAnchorScroll"; // custom hook
+
 function AppContent() {
   const { isLoading } = useContext(LoadingContext);
   const { dark } = useDarkMode();
+  const lenis = useRef(null);
 
   useEffect(() => {
-    // Lock scroll during loading
+    lenis.current = new Lenis({
+      duration: 2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smooth: true,
+      smoothTouch: true,
+    });
+
+    const raf = (time) => {
+      lenis.current?.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.current?.destroy();
+    };
+  }, []);
+
+  // Enable anchor link smooth scrolling
+  useLenisAnchorScroll(lenis);
+
+  useEffect(() => {
     document.body.style.overflow = isLoading ? "hidden" : "auto";
   }, [isLoading]);
 
@@ -36,7 +60,6 @@ function AppContent() {
         <Preloader />
       ) : (
         <>
-          <ScrollToTop />
           <Routes>
             <Route
               path="/"

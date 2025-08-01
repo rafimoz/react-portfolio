@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDarkMode } from "../contexts/DarkModeContext";
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useNavigate } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Data for your work cards
 const workData = [
@@ -46,104 +43,7 @@ const workData = [
 ];
 
 const RecentWork = () => {
-  const { dark } = useDarkMode();
   const navigate = useNavigate();
-
-  const workRef = useRef([]);
-  const containerRef = useRef(null);
-  const gsapBlRef = useRef(null);
-  const gsapTrackRef = useRef(null);
-  const gsapSliderRef = useRef(null);
-
-  // No more [moreInfo, setMoreInfo] here!
-
-  // GSAP Scroll Animation
-  useEffect(() => {
-    const scrollTrig = () => {
-      if (!gsapBlRef.current || !gsapTrackRef.current || !gsapSliderRef.current) return;
-
-      const gsapBl = gsapBlRef.current.offsetWidth;
-      const gsapTrack = gsapTrackRef.current.offsetWidth;
-      const scrollSliderTransform = gsapTrack - gsapBl;
-
-      const winHeight = window.innerHeight;
-      const slHeight = gsapSliderRef.current.offsetHeight;
-      const startScrollTrig = (winHeight - slHeight) / 2;
-
-      const proxy = { skew: 0 };
-      const skewSetter = gsap.quickSetter('.gsap__item', 'skewX', 'deg');
-      const clamp = gsap.utils.clamp(-1000, 1000);
-
-      gsap.to(gsapTrackRef.current, {
-        scrollTrigger: {
-          trigger: gsapSliderRef.current,
-          start: () => `-=${startScrollTrig}`,
-          end: '+=1500px',
-          scrub: true,
-          pin: true,
-          markers: false,
-          onUpdate: (self) => {
-            let skew = clamp(self.getVelocity() / 800);
-            if (Math.abs(skew) > Math.abs(proxy.skew)) {
-              proxy.skew = skew;
-              gsap.to(proxy, {
-                skew: 0,
-                duration: 0.8,
-                ease: 'power3',
-                overwrite: true,
-                onUpdate: () => skewSetter(proxy.skew),
-              });
-            }
-          },
-        },
-        x: `-${scrollSliderTransform}px`,
-      });
-
-      gsap.set('.gsap__item', { transformOrigin: 'center center', force3D: true });
-    };
-
-    scrollTrig();
-
-    return () => {
-      ScrollTrigger.killAll();
-    };
-  }, []);
-
-  // Title Animation
-  useEffect(() => {
-    const tl = gsap.timeline({ paused: true });
-    workRef.current.forEach((ref, index) => {
-      if (ref) {
-        tl.fromTo(
-          ref,
-          { x: index % 2 === 0 ? 900 : -900, opacity: 0 },
-          { x: 0, opacity: 1, ease: 'power3.out', duration: 0.5 },
-          index * 0.2
-        );
-      }
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            tl.play();
-          } else {
-            tl.reverse();
-          }
-        });
-      },
-      { threshold: 0.01 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   // Component for a single work card - NOW WITH ITS OWN STATE!
   const WorkCard = ({ id, image, title, link, description }) => {
@@ -160,12 +60,11 @@ const RecentWork = () => {
         ${isExpanded ? "grid-rows-[0fr_5fr]" : "grid-rows-[5fr_1fr]"} 
         w-[90vw] h-full sm:w-[40vw] overflow-hidden 
         ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} 
-        gsap__item
-        relative
+        relative rounded-lg transform hover:-translate-y-2 transition-all duration-300
       `}>
-        <div className='w-full flex justify-center items-center overflow-hidden relative'>
-          <img src={image} alt={title} className="object-cover h-full w-full" />
-          <div className={`absolute inset-0 bg-gradient-to-br ${dark ? "from-primary to-primary/0" : "from-secondary to-secondary/0"}`}></div>
+        <div className='w-full flex justify-center items-center group overflow-hidden relative'>
+          <img src={image} alt={title} className="object-cover group-hover:scale-105 transition-all duration-300 h-full w-full" />
+          <div className={`absolute  inset-0 bg-gradient-to-br ${dark ? "from-primary to-primary/0" : "from-secondary to-secondary/0"}`}></div>
         </div>
         {/* Adjusted position for #id. Made it absolute within the relative parent. */}
         <p className={`text-4xl sm:text-6xl font-bodoni leading-none absolute sm:top-4 top-2 sm:left-4 left-2 ${isExpanded ? "hidden" : "block"}`}>#{id}</p>
@@ -192,9 +91,9 @@ const RecentWork = () => {
   };
 
   return (
-    <section ref={containerRef} id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
+    <section id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
       <main>
-        <section className="sm:h-[100vh] h-[80vh] flex flex-col justify-center gsap_slider" ref={gsapSliderRef}>
+        <section className="sm:h-[100vh] h-[80vh] flex flex-col justify-center">
           <header >
             <div className='text-5xl sm:text-7xl font-bodoni'>
               <p>Recent Works</p>
@@ -202,10 +101,10 @@ const RecentWork = () => {
           </header>
 
           <div className="w-full sm:h-[75%] h-[65%]">
-            <div className="h-full gsap_h">
-              <div className="w-full h-full gsap__bl" ref={gsapBlRef}>
-                <div className="flex items-center h-full overflow-hidden w-full gsap__inner">
-                  <div className="flex py-4 sm:py-6 gap-4 h-full gsap__track" ref={gsapTrackRef}>
+            <div className="h-full">
+              <div className="w-full h-full" >
+                <div className="flex overflow-x-scroll items-center h-full w-full ">
+                  <div className="flex py-4 sm:py-6 gap-4 h-full " >
                     {workData.map((work) => (
                       <WorkCard
                         key={work.id}

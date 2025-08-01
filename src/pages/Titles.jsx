@@ -11,7 +11,7 @@ const Titles = () => {
         titleRefs.current.forEach((ref, index) => {
             tl.current.fromTo(ref,
                 {
-                    x: index % 2 === 0 ? 1000 : -1000
+                    x: index % 2 === 0 ? 1400 : -1400
                 },
                 {
                     x: 0,

@@ -3,41 +3,12 @@ import { useDarkMode } from "../contexts/DarkModeContext";
 
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Lenis from 'lenis'
 
 const Home = () => {
   const { dark, setDark } = useDarkMode(); // Access dark mode state
 
   let setTheme = () => {
     setDark((prevDark) => !prevDark);
-  };
-
-  const lenis = useRef(null);
-
-  useEffect(() => {
-    // Initialize Lenis
-    lenis.current = new Lenis({
-      duration: 2, // Increase duration for slower scrolling
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Slower easing function
-      smooth: true,
-      smoothTouch: true,
-    });
-
-    // Start Lenis animation frame
-    const raf = (time) => {
-      lenis.current?.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.current?.destroy();
-    };
-  }, []);
-
-  // Scroll to the specific section by ID
-  const scrollToSection = (id) => {
-    lenis.current?.scrollTo(`#${id}`);
   };
 
   const div1Ref = useRef(null);
@@ -230,9 +201,9 @@ const Home = () => {
         </button>
 
         <div ref={navRef} className='absolute z-10 text-lg left-4 -top-20 flex flex-col sm:flex-row font-aboreto'>
-          <p onClick={() => scrollToSection('about')} className=' hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>About</p>
-          <p onClick={() => scrollToSection('work')} className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>Works</p>
-          <p onClick={() => scrollToSection('contact')} className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>Contact</p>
+          <a href='#about'  className=' hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>About</a>
+          <a href='/allworks' className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>porfolio</a>
+          <a href='#contact' className='hover:opacity-45 cursor-pointer sm:mr-10 transition-all'>Contact</a>
         </div>
       </div>
     </div>

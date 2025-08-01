@@ -5,38 +5,47 @@ import { gsap } from 'gsap';
 const Footer = () => {
     const { dark } = useDarkMode(); // Access the dark mode state
     const textRef1 = useRef(null);
-    const textRef2 = useRef(null);
 
     useEffect(() => {
-        const textElement1 = textRef1.current;
-        const textElement2 = textRef2.current;
+        const marquee = textRef1.current;
 
-        gsap.set(textElement2, { xPercent: 100 }); // Set initial position of second text
+        let animation = gsap.fromTo(
+            marquee,
+            { x: 0 },
+            {
+                x: () => -marquee.offsetWidth / 2,
+                duration: 20,
+                ease: "linear",
+                repeat: -1,
+            }
+        );
 
-        const tl = gsap.timeline({ repeat: -1 });
-
-        tl.to([textElement1, textElement2], {
-            xPercent: "-=100",
-            duration: 20,
-            ease: "linear",
-        });
-
+        return () => animation.kill(); // Cleanup on unmount
     }, []);
 
+
+
     return (
-        <div className={`w-full flex flex-col justify-end overflow-hidden`}>
-            <div className='w-full h-[70vh] flex flex-col items-center justify-center gap-9'>
-                <div className='text-center items-center flex flex-col gap-4'>
-                    <h2 className='font-aboreto text-xl'>Project in mind?</h2>
-                    <div className='overflow-hidden whitespace-nowrap relative'>
-                        <h1 ref={textRef1} className='font-aboreto text-5xl sm:text-8xl inline-block'>
-                            let's make your Website shine! &nbsp;
-                        </h1>
-                        <h1 ref={textRef2} className='font-aboreto text-5xl sm:text-8xl inline-block absolute top-0 left-0'>
-                            let's make your Website shine! &nbsp;
-                        </h1>
+        <div className={`w-full  flex flex-col justify-end overflow-hidden`}>
+            <div className='w-full  h-[70vh] flex flex-col items-center justify-center gap-9'>
+                <div className='text-center w-full items-center flex flex-col gap-4'>
+                    <h2 className='font-aboreto md:text-4xl text-xl'>Project in mind?</h2>
+                    <div className="overflow-hidden w-full whitespace-nowrap">
+                        <div className="flex gap-0 w-max" ref={textRef1}>
+                            {[...Array(3)].map((_, i) => (
+                                <h1
+                                    key={i}
+                                    className="font-aboreto text-5xl md:text-9xl"
+                                >
+                                    - let's make your Website shine! &nbsp;
+                                </h1>
+                            ))}
+                        </div>
                     </div>
-                    <h2 className='w-[300px] sm:w-[700px] font-aboreto text-sm sm:text-xl'>Where design meets development: Seamless digital solutions</h2>
+
+
+
+                    <h2 className='w-[300px] sm:w-[700px] font-aboreto md:text-xl text-sm'>Where design meets development: Seamless digital solutions</h2>
                 </div>
                 <div>
                     <a
