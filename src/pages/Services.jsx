@@ -98,7 +98,7 @@ const Services = () => {
         {
             id: 2,
             title: 'UI/UX design',
-            imageUrl: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1752942248/crtc0gynntbvq7gevco8.jpg',
+            imageUrl: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1752942535/vckfyxyjtog0igoxweaz.jpg',
             description: 'Crafting intuitive and engaging interfaces for enhanced user satisfaction.'
         },
         {
@@ -110,7 +110,7 @@ const Services = () => {
         {
             id: 4,
             title: 'Graphic design',
-            imageUrl: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1752942535/vckfyxyjtog0igoxweaz.jpg',
+            imageUrl: 'https://cdn.dribbble.com/userupload/44353266/file/c38bf2c54b41d66ef3d202cc001b810e.png?resize=752x564&vertical=center',
             description: 'Transforming ideas into visually stunning and impactful designs that elevate your brand identity and captivate your audience.'
         },
     ];

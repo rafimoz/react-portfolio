@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-
-const AllWorks = () => {
+const AllWorks = () => {    
     const allWorks = [
         {
             id: '01',
-            image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1750406480/pawambhbvcjck2dlel3p.jpg',
+            image: 'https://scontent.fdac142-1.fna.fbcdn.net/v/t39.30808-6/502486362_122097718790896783_6661868258261055023_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ynIOWNgOCFoQ7kNvwHIPe2N&_nc_oc=AdkdZTmmgCYBv4xZChGBCfv0tPd7rpMMTOmqago-wBMSGjDTH-nuk8DtFAndUcrDfDI&_nc_zt=23&_nc_ht=scontent.fdac142-1.fna&_nc_gid=HgbOSSJfq1vI3pWjE5FSYw&oh=00_AfTj25a-6waX-jPzvVUPPmO_NdciZpCp1sLAZ3WgMzu01Q&oe=68955DA6',
             title: 'Basha Bhara Hobe',
             link: 'https://basha-bhara-hobe.vercel.app/',
             description: 'A housing rental platform built with the MERN stack, designed to provide a user-friendly experience for finding and listing rental properties.',
@@ -158,10 +157,34 @@ const AllWorks = () => {
             id: '20',
             image: 'https://cdn.dribbble.com/userupload/44325982/file/3dd92308190c4ab56fa1c683be96ee87.png?resize=1024x768&vertical=center',
             title: 'A conceptual poster design titled - Motion',
-            link: 'https://dribbble.com/shots/25737480-Makeit-Landing-Page',
+            link: 'https://dribbble.com/shots/26346175-Motion',
             description: 'This project, Motion, is a conceptual poster design created in Adobe Photoshop. The primary goal was to visualize the abstract idea of motion in a compelling, static image. This was achieved by blending a high-contrast, blurred photograph of a person with large, rhythmic typography. The letterforms are positioned to interact with the figure, creating a sense of dynamic flow and continuity.',
             category: 'graphic-designs',
         },
+        {
+            id: '21',
+            image: 'https://cdn.dribbble.com/userupload/44344510/file/af5fe8578823f0b6547ae2dbd55b24eb.png?resize=752x564&vertical=center',
+            title: 'WAVVY - A Typographic Exploration',
+            link: 'https://dribbble.com/shots/26352170-WAVVY-A-Typographic-Exploration',
+            description: 'A typographic poster playing with the concept of distortion and flow. The design features the word "WAVVY" rendered in a clean, sans-serif typeface, with the central letters manipulated to create a fluid, wavy effect.',
+            category: 'graphic-designs',
+        },
+        {
+            id: '22',
+            image: 'https://cdn.dribbble.com/userupload/44353266/file/c38bf2c54b41d66ef3d202cc001b810e.png?resize=752x564&vertical=center',
+            title: 'Jude Bellingham - Motion Blurred',
+            link: 'https://dribbble.com/shots/26354870-Jude-Bellingham-Motion-Blurred',
+            description: 'A tribute poster for footballer Jude Bellingham, capturing his powerful presence with a dynamic and stylized portrait. The design features a motion-blurred profile shot of Bellingham, set against a striking red background with a prominent halo-like circle.',
+            category: 'graphic-designs',
+        },
+        {
+            id: '23',
+            image: 'https://cdn.dribbble.com/userupload/44344458/file/4d5f2bdf282158fc2d93400f682edd01.png?resize=752x564&vertical=center',
+            title: '2001: A Space Odyssey - Reimagined Poster',
+            link: 'https://dribbble.com/shots/26352155-2001-A-Space-Odyssey-Reimagined-Poster',
+            description: "A minimalist and abstract reinterpretation of the classic film, 2001: A Space Odyssey. This poster design captures the film's sense of wonder, cosmic scale, and technological aether.",
+            category: 'graphic-designs',
+        }
     ];
 
     const [activeTab, setActiveTab] = useState('all');
@@ -178,9 +201,9 @@ const AllWorks = () => {
         : allWorks.filter(work => work.category === activeTab);
 
     return (
-        <section className='py-10 px-4 sm:px-8'>
+        <section className={`dark:bg-secondary bg-primary py-10 px-4 sm:px-8`}>
             <div className='max-w-7xl mx-auto'>
-                <h1 className='text-5xl sm:text-7xl font-bodoni text-center text-primary mb-12 leading-tight'>
+                <h1 className='text-5xl sm:text-7xl font-bodoni text-center dark:text-primary text-secondary mb-12 leading-tight'>
                     -Projects-
                 </h1>
 
@@ -191,8 +214,8 @@ const AllWorks = () => {
                             onClick={() => setActiveTab(tab.id)}
                             className={`px-4 py-2 sm:text-md text-sm rounded-lg font-aboreto transition-all duration-300 ease-in-out
                                 ${activeTab === tab.id
-                                    ? 'bg-primary text-secondary shadow-md'
-                                    : 'bg-secondary text-primary hover:bg-primary/10'}`}
+                                    ? 'dark:bg-primary bg-secondary dark:text-secondary text-primary shadow-md'
+                                    : 'dark:text-primary text-secondary hover:dark:bg-primary/20 hover:bg-secondary/20'}`}
                         >
                             {tab.name}
                         </button>
@@ -202,7 +225,7 @@ const AllWorks = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4'>
                     {filteredWorks.map((work) => (
                         <div
-                            className='block rounded-lg group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out bg-primary'
+                            className='block group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out dark:bg-primary bg-secondary'
                         >
                             <div className='relative overflow-hidden h-64'>
                                 <img
@@ -212,8 +235,8 @@ const AllWorks = () => {
                                 />
                             </div>
                             <div className='p-4 flex flex-col gap-2'>
-                                <h3 className='text-xl font-semibold text-secondary line-clamp-1'>{work.title}</h3>
-                                <p className='text-secondary/80 line-clamp-2 text-sm'>
+                                <h3 className='text-xl font-semibold dark:text-secondary text-primary line-clamp-1'>{work.title}</h3>
+                                <p className='dark:text-secondary/80 text-primary/80 line-clamp-2 text-sm'>
                                     {work.description}
                                 </p>
                                 <a
@@ -221,7 +244,7 @@ const AllWorks = () => {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     key={work.id}
-                                    className='mt-2 inline-flex items-center text-secondary font-medium text-sm group-hover:underline'
+                                    className='mt-2 inline-flex items-center dark:text-secondary text-primary font-medium text-sm group-hover:underline'
                                 >
                                     View Project
                                     <svg className='ml-1 w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>

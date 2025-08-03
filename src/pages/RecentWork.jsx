@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const workData = [
   {
     id: '01',
-    image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1750406480/pawambhbvcjck2dlel3p.jpg',
+    image: 'https://scontent.fdac142-1.fna.fbcdn.net/v/t39.30808-6/502486362_122097718790896783_6661868258261055023_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ynIOWNgOCFoQ7kNvwHIPe2N&_nc_oc=AdkdZTmmgCYBv4xZChGBCfv0tPd7rpMMTOmqago-wBMSGjDTH-nuk8DtFAndUcrDfDI&_nc_zt=23&_nc_ht=scontent.fdac142-1.fna&_nc_gid=HgbOSSJfq1vI3pWjE5FSYw&oh=00_AfTj25a-6waX-jPzvVUPPmO_NdciZpCp1sLAZ3WgMzu01Q&oe=68955DA6',
     title: 'Basha Bhara Hobe',
     link: 'https://basha-bhara-hobe.vercel.app/',
     description: 'A health management platform, created using MERN stack technology. To bring friendliness to users. A health management platform, created using MERN stack technology. To bring friendliness to users.',
@@ -60,7 +60,7 @@ const RecentWork = () => {
         ${isExpanded ? "grid-rows-[0fr_5fr]" : "grid-rows-[5fr_1fr]"} 
         w-[90vw] h-full sm:w-[40vw] overflow-hidden 
         ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} 
-        relative rounded-lg transform hover:-translate-y-2 transition-all duration-300
+        relative transform hover:-translate-y-2 transition-all duration-300
       `}>
         <div className='w-full flex justify-center items-center group overflow-hidden relative'>
           <img src={image} alt={title} className="object-cover group-hover:scale-105 transition-all duration-300 h-full w-full" />
