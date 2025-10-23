@@ -184,7 +184,23 @@ const AllWorks = () => {
             link: 'https://dribbble.com/shots/26352155-2001-A-Space-Odyssey-Reimagined-Poster',
             description: "A minimalist and abstract reinterpretation of the classic film, 2001: A Space Odyssey. This poster design captures the film's sense of wonder, cosmic scale, and technological aether.",
             category: 'graphic-designs',
-        }
+        },
+        {
+            id: '24',
+            image: 'https://cdn.dribbble.com/userupload/45414234/file/ab95a27775aed2d2f40c8004f979bbae.jpg?resize=1024x1280&vertical=center',
+            title: 'Cristiano Ronaldo - Poster',
+            link: 'https://dribbble.com/shots/26681869-Cristiano-Ronaldo-Poster?new_shot_upload=true&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20Poster&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20Poster&utm_medium=Social_Share',
+            description: "New Portfolio Piece: Record Breaker! Honoring the GOAT, Cristiano Ronaldo, for becoming the Top Goalscorer in World Cup Qualifiers with an insane 41 goals in 51 games.",
+            category: 'graphic-designs',
+        },
+        {
+            id: '25',
+            image: 'https://cdn.dribbble.com/userupload/45414386/file/a4c992dee370f7b2dfb5de39c186bd77.png?resize=752x&vertical=center',
+            title: 'Cristiano Ronaldo - AURA',
+            link: 'https://dribbble.com/shots/26681938-Cristiano-Ronaldo-AURA?new_shot_upload=true&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20AURA&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20AURA&utm_medium=Social_Share',
+            description: "Design concept built around the electrifying presence of Cristiano Ronaldo. That stadium light, the motion blur, the sheer intensity—this is what CR7 brings to the pitch.",
+            category: 'graphic-designs',
+        },
     ];
 
     const [activeTab, setActiveTab] = useState('all');
