@@ -5,8 +5,8 @@ const Contact = () => {
   const { dark } = useDarkMode(); // Access the dark mode state
 
   return (
-    <section id="contact" className='w-full flex flex-row justify-end items-center py-[100px] sm:px-8 px-4'>
-    <div className="w-full sm:w-[50%]">
+    <section id="contact" className='w-full flex flex-row justify-end my-40 sm:px-8 px-4'>
+    <div className="w-full md:w-[40%]">
       <h2 className='w-full font-bodoni text-5xl sm:text-7xl mb-14 text-center sm:text-end'>Contact</h2>
       <div className="mail w-full">
         <span className='sm:text-xl text-lg font-aboreto'>MAIL ME</span>

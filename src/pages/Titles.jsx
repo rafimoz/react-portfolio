@@ -1,77 +1,56 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Titles = () => {
-    const titleRefs = useRef([]);
-    const containerRef = useRef(null);
-    const tl = useRef(gsap.timeline({ paused: true }));
+  const titleRefs = useRef([]);
+  const containerRef = useRef(null);
 
-    useGSAP(() => {
-        titleRefs.current.forEach((ref, index) => {
-            tl.current.fromTo(ref,
-                {
-                    x: index % 2 === 0 ? 1400 : -1400
-                },
-                {
-                    x: 0,
-                    duration: 1,
-                    ease: 'power3.out',
-                    delay: index * 0.2
-                },
-                index * 0.2
-            );
-        });
-    }, []);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        tl.current.play();
-                    } else {
-                        tl.current.reverse();
-                    }
-                });
-            },
-            { threshold: 0.2 } // Trigger when 10% of the element is visible
-        );
-
-        if (containerRef.current) {
-            observer.observe(containerRef.current);
+  useGSAP(() => {
+    titleRefs.current.forEach((ref, index) => {
+      gsap.fromTo(
+        ref,
+        {
+          x: index % 2 === 0 ? 1400 : -1400,
+        },
+        {
+          x: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%', // when 80% of viewport from top
+            end: 'top 20%', // when scrolled past
+            scrub: 1, // makes it smooth in both directions
+          },
+          delay: index * 0.3,
         }
+      );
+    });
+  }, []);
 
-        return () => {
-            if (containerRef.current) {
-                observer.unobserve(containerRef.current);
-            }
-        };
-    }, []);
-
-    return (
-        <section ref={containerRef} className='w-full flex justify-center items-center'>
-            <div className='w-full text-center my-56  text-5xl sm:text-8xl overflow-hidden '>
-                <div>
-                    <p className='font-allura cursor-default'>A</p>
-                </div>
-                <div className='font-aboreto'>
-                    <div className='hover:scale-105 hover:tracking-wide transition-all cursor-default'>
-                        <p ref={el => titleRefs.current[0] = el}>"DESIGNER</p>
-                    </div>
-                    <div className='hover:scale-105 hover:tracking-wide transition-all cursor-default'>
-                        <p ref={el => titleRefs.current[1] = el}>DEVELOPER</p>
-                    </div>
-                    <div className='hover:scale-105 hover:tracking-wide transition-all cursor-default'>
-                        <p ref={el => titleRefs.current[2] = el}>ARTIST</p>
-                    </div>
-                    <div className='hover:scale-105 hover:tracking-wide transition-all cursor-default'>
-                        <p ref={el => titleRefs.current[3] = el}>THINKER"</p>
-                    </div>
-                </div>
+  return (
+    <section ref={containerRef} className="w-full flex justify-center items-center">
+      <div className="w-full text-center my-56 text-5xl sm:text-8xl overflow-hidden">
+        <div>
+          <p className="font-allura cursor-default">A</p>
+        </div>
+        <div className="font-aboreto">
+          {['"DESIGNER', 'DEVELOPER', 'ARTIST', 'THINKER"'].map((text, i) => (
+            <div
+              key={i}
+              className="hover:scale-105 hover:tracking-wide transition-all cursor-default"
+            >
+              <p ref={(el) => (titleRefs.current[i] = el)}>{text}</p>
             </div>
-        </section>
-    )
-}
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Titles
+export default Titles;

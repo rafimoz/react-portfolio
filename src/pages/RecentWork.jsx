@@ -3,14 +3,13 @@ import { useDarkMode } from "../contexts/DarkModeContext";
 import gsap from 'gsap';
 import { useNavigate } from "react-router-dom";
 
-// Data for your work cards
 const workData = [
   {
     id: '01',
-    image: 'https://scontent.fdac142-1.fna.fbcdn.net/v/t39.30808-6/502486362_122097718790896783_6661868258261055023_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ynIOWNgOCFoQ7kNvwHIPe2N&_nc_oc=AdkdZTmmgCYBv4xZChGBCfv0tPd7rpMMTOmqago-wBMSGjDTH-nuk8DtFAndUcrDfDI&_nc_zt=23&_nc_ht=scontent.fdac142-1.fna&_nc_gid=HgbOSSJfq1vI3pWjE5FSYw&oh=00_AfTj25a-6waX-jPzvVUPPmO_NdciZpCp1sLAZ3WgMzu01Q&oe=68955DA6',
+    image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1754168917/wimxj8iarnwzkarajlt2.jpg',
     title: 'Basha Bhara Hobe',
     link: 'https://basha-bhara-hobe.vercel.app/',
-    description: 'A health management platform, created using MERN stack technology. To bring friendliness to users. A health management platform, created using MERN stack technology. To bring friendliness to users.',
+    description: `For House Owners: Take control of your listings! Easily post available apartment units, upload photos of each room, set prices, and manage availability from your personal dashboard. We'll automatically generate a unique QR code for your listing, which you can display outside your building for instant access. For Renters: Say goodbye to frustrating searches and agent fees! Simply scan the Basha Bhara Hobe QR code on any building to instantly view a list of all available units within that building. Explore detailed descriptions, clear pricing, and high-quality images of every room before you even step inside. No login required – just scan and discover! Our mission is to make renting seamless, transparent, and efficient for everyone.`,
   },
   {
     id: '02',
@@ -45,6 +44,35 @@ const workData = [
 const RecentWork = () => {
   const navigate = useNavigate();
 
+  const expertiseRef = useRef([]);
+    const containerRef = useRef(null);
+  
+
+   // Title & content animations
+  useEffect(() => {
+    expertiseRef.current.forEach((ref, index) => {
+      if (ref) {
+        gsap.fromTo(
+          ref,
+          { y: index % 2 === 0 ? -900 : 900, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            ease: 'power3.out',
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+              end: 'top 20%',
+              scrub: 1,
+            },
+            delay: index * 0.15,
+          }
+        );
+      }
+    });
+  }, []);
+
   // Component for a single work card - NOW WITH ITS OWN STATE!
   const WorkCard = ({ id, image, title, link, description }) => {
     const { dark } = useDarkMode(); // Access dark mode within the card
@@ -58,7 +86,7 @@ const RecentWork = () => {
       <div className={`
         grid 
         ${isExpanded ? "grid-rows-[0fr_5fr]" : "grid-rows-[5fr_1fr]"} 
-        w-[90vw] h-full sm:w-[40vw] overflow-hidden 
+        w-[90vw] h-full sm:w-[40vw] overflow-hidden rounded-xl
         ${dark ? "bg-primary/80 text-secondary" : "bg-secondary/80 text-primary"} 
         relative transform hover:-translate-y-2 transition-all duration-300
       `}>
@@ -69,32 +97,26 @@ const RecentWork = () => {
         {/* Adjusted position for #id. Made it absolute within the relative parent. */}
         <p className={`text-4xl sm:text-6xl font-bodoni leading-none absolute sm:top-4 top-2 sm:left-4 left-2 ${isExpanded ? "hidden" : "block"}`}>#{id}</p>
         {/* The click handler is now on this card's specific div */}
-        <div className='sm:p-4 p-2 cursor-pointer mb-8'> {/* Added cursor-pointer for better UX */}
-          <p className='font-aboreto uppercase text-[15px] flex items-center gap-1 sm:text-xl'>{title} -
-            <a href={link} target='_blank' onClick={(e) => e.stopPropagation()}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-              </svg>
-            </a>
-          </p>
+        <div className='sm:p-4 space-y-2 p-2 cursor-pointer mb-8'> {/* Added cursor-pointer for better UX */}
+          <p className='font-aboreto uppercase text-[15px] flex items-center gap-1 sm:text-xl'>{title}</p>
           <p className={`w-full text-[13px] sm:text-sm font-sans leading-[14px] ${isExpanded ? "line-clamp-none" : "line-clamp-1"}`}>
             {description}
           </p>
-          <div onClick={toggleExpansion} className='absolute sm:right-4 right-2 sm:bottom-4 bottom-2'>
+          <button onClick={toggleExpansion} className={`absolute sm:right-4 right-2 sm:bottom-4 bottom-2 ${isExpanded ? 'rotate-90' : ''} transition-all`}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     );
   };
 
   return (
-    <section id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
+    <section ref={containerRef} id='work' className="relative w-full overflow-hidden sm:pl-8 pl-4">
       <main>
         <section className="sm:h-[100vh] h-[80vh] flex flex-col justify-center">
-          <header >
+          <header ref={(el) => (expertiseRef.current[0] = el)} >
             <div className='text-5xl sm:text-7xl font-bodoni'>
               <p>Recent Works</p>
             </div>
@@ -104,7 +126,7 @@ const RecentWork = () => {
             <div className="h-full">
               <div className="w-full h-full" >
                 <div className="flex overflow-x-scroll items-center h-full w-full ">
-                  <div className="flex py-4 sm:py-6 gap-4 h-full " >
+                  <div  ref={(el) => (expertiseRef.current[1] = el)} className="flex py-4 sm:py-6 gap-4 h-full " >
                     {workData.map((work) => (
                       <WorkCard
                         key={work.id}

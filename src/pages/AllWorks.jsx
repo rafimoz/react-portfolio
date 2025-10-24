@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-const AllWorks = () => {    
+import React, { useState, useEffect } from 'react';
+const AllWorks = () => {
     const allWorks = [
         {
             id: '01',
-            image: 'https://scontent.fdac142-1.fna.fbcdn.net/v/t39.30808-6/502486362_122097718790896783_6661868258261055023_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ynIOWNgOCFoQ7kNvwHIPe2N&_nc_oc=AdkdZTmmgCYBv4xZChGBCfv0tPd7rpMMTOmqago-wBMSGjDTH-nuk8DtFAndUcrDfDI&_nc_zt=23&_nc_ht=scontent.fdac142-1.fna&_nc_gid=HgbOSSJfq1vI3pWjE5FSYw&oh=00_AfTj25a-6waX-jPzvVUPPmO_NdciZpCp1sLAZ3WgMzu01Q&oe=68955DA6',
+            image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1754168917/wimxj8iarnwzkarajlt2.jpg',
             title: 'Basha Bhara Hobe',
             link: 'https://basha-bhara-hobe.vercel.app/',
             description: 'A housing rental platform built with the MERN stack, designed to provide a user-friendly experience for finding and listing rental properties.',
@@ -187,6 +187,10 @@ const AllWorks = () => {
         }
     ];
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [activeTab, setActiveTab] = useState('all');
 
     const tabs = [
@@ -225,7 +229,7 @@ const AllWorks = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4'>
                     {filteredWorks.map((work) => (
                         <div
-                            className='block group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out dark:bg-primary bg-secondary'
+                            className='block group relative overflow-hidden transform hover:-translate-y-2 transition-all rounded-xl duration-300 ease-in-out dark:bg-primary bg-secondary'
                         >
                             <div className='relative overflow-hidden h-64'>
                                 <img
