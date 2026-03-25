@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const arts = [
-    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-3_bw6s7h.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034318_ck5frr.png",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034358_okj5a0.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-7_nzy5sl.jpg",
@@ -11,6 +10,9 @@ const arts = [
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-5_xlkmug.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-2_rlmiib.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503025/art-6_gsyoe8.jpg",
+    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1774396514/instagram_CCAoXHEF3cV_f5aadj.jpg",
+    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1774396514/instagram_CuwWk4Arc5q_ge6z36.jpg",
+    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1774396513/649536279_18086300207229539_5852850314850134585_n_zd5gve.jpg"
 ];
 
 const PhotoGridGallery = () => {
@@ -50,12 +52,12 @@ const PhotoGridGallery = () => {
                 - Also an Artist -
             </h2>
 
-            <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 space-y-4">
+            <div className="columns-2 sm:columns-2 lg:columns-3 gap-2 space-y-2">
                 {arts.map((img, index) => (
                     <div
                         key={index}
                         ref={addToRefs}
-                        className="break-inside-avoid w-full mb-4 overflow-hidden rounded"
+                        className="break-inside-avoid w-full overflow-hidden rounded-lg"
                     >
                         <img
                             src={img}

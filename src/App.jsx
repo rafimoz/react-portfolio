@@ -79,7 +79,7 @@ function AppContent() {
                 </>
               }
             />
-            <Route path="/works" element={<Works />} />
+            {/* <Route path="/works" element={<Works />} /> */}
             <Route path="/allworks" element={<AllWorks />} />
           </Routes>
         </>

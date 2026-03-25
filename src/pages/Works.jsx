@@ -11,11 +11,11 @@ const Works = () => {
         <div className='relative z-10'> {/* Added z-10 to ensure content is above the background */}
           <div className='w-full flex justify-between items-end p-2 pt-20 bg-primary rounded-xl'>
             <h1 className='sm:text-6xl text-4xl text-secondary'>Carenavi</h1>
-            <button className='px-3 py-2 h-fit sm:text-lg text-sm rounded-full bg-secondary border-white'>visit website</button>
+            <button className='px-4 py-2 h-fit sm:text-md text-xs rounded-full bg-secondary border-white'>visit website</button>
           </div>
 
           <div className='sm:flex grid grid-cols-2 sm:justify-between gap-4 py-4'>
-           
+
             <div className='flex flex-col gap-2'>
               <h3 className='sm:text-lg text-sm uppercase'>Project year</h3>
               <div className='text-primary/80'>
@@ -60,7 +60,6 @@ const Works = () => {
             <div className='sm:grid sm:grid-cols-2 flex flex-col gap-4'>
               <div className='flex flex-col gap-2'>
                 <h2 className='sm:text-4xl text-3xl'>Project brief</h2>
-                <div className='sm:w-[80%] w-full sm:h-[120px] h-[80px] bg-primary rounded-xl'></div>
               </div>
               <div className='sm:text-lg text-md'>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam iste suscipit aliquam expedita laboriosam perferendis Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptates corrupti pariatur recusandae ratione reprehenderit beatae soluta corporis? Iste ad blanditiis at itaque fugit adipisci obcaecati? Modi repellat vitae delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam consequuntur voluptatibus eum quas veritatis labore ab incidunt rem eius voluptatum quod porro, sit tempora temporibus vero? Eos voluptas obcaecati ea. enim officia facilis consequatur fugit, atque, incidunt tempora corporis. At totam unde ipsum neque omnis?</p>
@@ -70,7 +69,6 @@ const Works = () => {
             <div className='sm:grid sm:grid-cols-2 flex flex-col gap-4'>
               <div className='flex flex-col gap-2'>
                 <h2 className='sm:text-4xl text-3xl'>Problem faced</h2>
-                <div className='sm:w-[80%] w-full sm:h-[120px] h-[80px] bg-primary rounded-xl'></div>
               </div>
               <div className='sm:text-lg text-md'>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam iste suscipit aliquam expedita laboriosam perferendis Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptates corrupti pariatur recusandae ratione reprehenderit beatae soluta corporis? Iste ad blanditiis at itaque fugit adipisci obcaecati? Modi repellat vitae delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam consequuntur voluptatibus eum quas veritatis labore ab incidunt rem eius voluptatum quod porro, sit tempora temporibus vero? Eos voluptas obcaecati ea. enim officia facilis consequatur fugit, atque, incidunt tempora corporis. At totam unde ipsum neque omnis?</p>

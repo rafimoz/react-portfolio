@@ -9,21 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 const experienceData = [
     {
         company: "AB Construction LTD",
-        link: "https://abcl.com.bd/",
         role: "Asst. Executive (IT & Admin)",
-        duration: "Aug 2025 - Present",
+        duration: "Aug 2025 - Feb 2026",
         type: "(Full-Time)"
     },
     {
         company: "Aerhe Development Federation",
-        link: "https://www.quantanite.com/",
-        role: "Volunteer",
+        role: "Intern",
         duration: "Feb 2025 - Mar 2025",
         type: "(Full-Time)"
     },
     {
         company: "Quantanite Bangladesh LTD",
-        link: "https://www.quantanite.com/",
         role: "Project Employee",
         duration: "Jan 2021 - Aug 2021",
         type: "(Full-Time)"
@@ -92,7 +89,7 @@ const Experience = () => {
                                 </div>
                                 <div className='space-y-2'>
                                     <p className='font-bold text-lg sm:text-xl line-clamp-1'>
-                                        <a href={exp.link}>{exp.company}</a>
+                                        {exp.company}
                                     </p>
                                     <p className='text-xs sm:text-lg line-clamp-1'>{exp.role}</p>
                                 </div>

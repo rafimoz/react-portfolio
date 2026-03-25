@@ -195,11 +195,11 @@ const AllWorks = () => {
         },
         {
             id: '25',
-            image: 'https://cdn.dribbble.com/userupload/45414386/file/a4c992dee370f7b2dfb5de39c186bd77.png?resize=752x&vertical=center',
-            title: 'Cristiano Ronaldo - AURA',
-            link: 'https://dribbble.com/shots/26681938-Cristiano-Ronaldo-AURA?new_shot_upload=true&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20AURA&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=rafimozumder&utm_content=Cristiano%20Ronaldo%20-%20AURA&utm_medium=Social_Share',
-            description: "Design concept built around the electrifying presence of Cristiano Ronaldo. That stadium light, the motion blur, the sheer intensity—this is what CR7 brings to the pitch.",
-            category: 'graphic-designs',
+            image: 'https://cdn.dribbble.com/userupload/46289806/file/5109b20792327b56b157c7627add9ad2.png?resize=1200x1026&vertical=center',
+            title: 'Premium Skincare Landing Page',
+            link: 'https://dribbble.com/shots/26954551-Premium-Skincare-Landing-Page',
+            description: 'Explored a dynamic and modern UI. Check out the full pixels attached!',
+            category: 'ui-ux',
         },
     ];
 
@@ -216,67 +216,73 @@ const AllWorks = () => {
         { id: 'graphic-designs', name: 'Graphic Designs' },
     ];
 
+    // 1. Create a copy and sort by ID descending (highest/newest ID first)
+    const sortedWorks = [...allWorks].sort((a, b) => parseInt(b.id) - parseInt(a.id));
+
+    // 2. Filter the already sorted list based on the active tab
     const filteredWorks = activeTab === 'all'
-        ? allWorks
-        : allWorks.filter(work => work.category === activeTab);
+        ? sortedWorks
+        : sortedWorks.filter(work => work.category === activeTab);
 
     return (
-        <section className={`dark:bg-secondary bg-primary py-10 px-4 sm:px-8`}>
-            <div className='max-w-7xl mx-auto'>
-                <h1 className='text-5xl sm:text-7xl font-bodoni text-center dark:text-primary text-secondary mb-12 leading-tight'>
-                    -Projects-
-                </h1>
+        <main className={`dark:bg-secondary bg-primary`}>
+            <section className=' py-10 px-4 sm:px-8'>
+                <div className='max-w-7xl mx-auto'>
+                    <h1 className='text-5xl sm:text-7xl font-bodoni text-center dark:text-primary text-secondary mb-12 leading-tight'>
+                        -Projects-
+                    </h1>
 
-                <div className='flex gap-4 sm:justify-center mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide'>
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`px-4 py-2 sm:text-md text-sm rounded-lg font-aboreto transition-all duration-300 ease-in-out
+                    <div className='flex gap-4 sm:justify-center mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide'>
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`px-4 py-2 sm:text-md text-sm rounded-lg font-aboreto transition-all duration-300 ease-in-out
                                 ${activeTab === tab.id
-                                    ? 'dark:bg-primary bg-secondary dark:text-secondary text-primary shadow-md'
-                                    : 'dark:text-primary text-secondary hover:dark:bg-primary/20 hover:bg-secondary/20'}`}
-                        >
-                            {tab.name}
-                        </button>
-                    ))}
-                </div>
+                                        ? 'dark:bg-primary bg-secondary dark:text-secondary text-primary shadow-md'
+                                        : 'dark:text-primary text-secondary hover:dark:bg-primary/20 hover:bg-secondary/20'}`}
+                            >
+                                {tab.name}
+                            </button>
+                        ))}
+                    </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4'>
-                    {filteredWorks.map((work) => (
-                        <div
-                            className='block group relative overflow-hidden transform hover:-translate-y-2 transition-all rounded-xl duration-300 ease-in-out dark:bg-primary bg-secondary'
-                        >
-                            <div className='relative overflow-hidden h-64'>
-                                <img
-                                    className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                    src={work.image}
-                                    alt={work.title}
-                                />
+                    <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-4'>
+                        {filteredWorks.map((work) => (
+                            <div
+                                className='block group relative overflow-hidden transform hover:-translate-y-2 transition-all rounded-xl duration-300 ease-in-out dark:bg-primary bg-secondary'
+                            >
+                                <div className='relative overflow-hidden h-64'>
+                                    <img
+                                        className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+                                        src={work.image}
+                                        alt={work.title}
+                                    />
+                                </div>
+                                <div className='p-4 flex flex-col gap-2'>
+                                    <h3 className='text-xl font-semibold dark:text-secondary text-primary line-clamp-1'>{work.title}</h3>
+                                    <p className='dark:text-secondary/80 text-primary/80 line-clamp-1 text-sm'>
+                                        {work.description}
+                                    </p>
+                                    <a
+                                        href={work.link}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        key={work.id}
+                                        className='mt-2 inline-flex items-center dark:text-secondary text-primary font-medium text-sm hover:underline'
+                                    >
+                                        View Project
+                                        <svg className='ml-1 w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7' />
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
-                            <div className='p-4 flex flex-col gap-2'>
-                                <h3 className='text-xl font-semibold dark:text-secondary text-primary line-clamp-1'>{work.title}</h3>
-                                <p className='dark:text-secondary/80 text-primary/80 line-clamp-2 text-sm'>
-                                    {work.description}
-                                </p>
-                                <a
-                                    href={work.link}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    key={work.id}
-                                    className='mt-2 inline-flex items-center dark:text-secondary text-primary font-medium text-sm group-hover:underline'
-                                >
-                                    View Project
-                                    <svg className='ml-1 w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7' />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     );
 };
 
