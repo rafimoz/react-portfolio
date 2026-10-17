@@ -65,7 +65,7 @@ const Footer = () => {
                 <div className='flex flex-col gap-3'>
                     <p>Social Links</p>
                     <div className='flex flex-col mt-4 text-sm'>
-                        <a className='hover:font-semibold' href="https://www.instagram.com/raafi.jpeg/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a className='hover:font-semibold' href="https://www.instagram.com/rafi.mozumdar/" target="_blank" rel="noopener noreferrer">Instagram</a>
                         <a className='hover:font-semibold' href="https://www.facebook.com/ami.rafimozumder" target="_blank" rel="noopener noreferrer">facebook</a>
                         <a className='hover:font-semibold' href="https://www.linkedin.com/in/rafi-mozumder/" target="_blank" rel="noopener noreferrer">linkedin</a>
                         <a className='hover:font-semibold' href="https://github.com/rafimoz" target="_blank" rel="noopener noreferrer">github</a>

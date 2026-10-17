@@ -129,15 +129,21 @@ const Services = () => {
         },
         {
             id: 3,
-            title: 'Mobile app',
+            title: 'System Design & Development',
             imageUrl: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1752942125/honayumkdhf4bq1c7zxm.jpg',
-            description: 'Developing native and cross-platform mobile apps for all devices.'
+            description: 'Designing and developing robust system architectures for scalable applications.'
         },
         {
             id: 4,
             title: 'Graphic design',
             imageUrl: 'https://cdn.dribbble.com/userupload/44353266/file/c38bf2c54b41d66ef3d202cc001b810e.png?resize=752x564&vertical=center',
             description: 'Transforming ideas into visually stunning and impactful designs that elevate your brand identity and captivate your audience.'
+        },
+        {
+            id: 5,
+            title: 'Digital Branding',
+            imageUrl: 'https://cdn.dribbble.com/userupload/46289806/file/5109b20792327b56b157c7627add9ad2.png?resize=1024x876&vertical=center',
+            description: 'Creating a strong and consistent online presence for your brand, enhancing recognition and engagement across digital platforms.'
         },
     ];
 

@@ -8,6 +8,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experienceData = [
     {
+        company: "AB Group of Companies",
+        role: "IT Officer",
+        duration: "Mar 2026 - Dec 2026",
+        type: "(Full-Time)"
+    },
+    {
         company: "AB Construction LTD",
         role: "Asst. Executive (IT & Admin)",
         duration: "Aug 2025 - Feb 2026",

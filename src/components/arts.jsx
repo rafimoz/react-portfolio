@@ -3,7 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const arts = [
-    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034318_ck5frr.png",
+    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1792228611/626703886_18117959854524362_8251602746430082133_n_1_xexeqv.webp",
+    "https://res.cloudinary.com/dhlh7av5k/image/upload/v1792228482/WhatsApp_Image_2026-10-17_at_3.13.35_PM_bylhbh.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521485/Screenshot_20241207-034358_okj5a0.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733503024/art-7_nzy5sl.jpg",
     "https://res.cloudinary.com/dhlh7av5k/image/upload/v1733521620/1733521522021_ngzfob.jpg",

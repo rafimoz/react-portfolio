@@ -201,6 +201,22 @@ const AllWorks = () => {
             description: 'Explored a dynamic and modern UI. Check out the full pixels attached!',
             category: 'ui-ux',
         },
+        {
+            id: '26',
+            image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1792229968/Expand-pfp_so2qkc.png',
+            title: 'AB Assets Limited - Corporate Website',
+            link: 'https://abassets.bd/',
+            description: 'A corporate website for AB Assets Limited, designed to provide a professional and user-friendly experience for visitors seeking information about the company and its services.',
+            category: 'web-applications',
+        },
+        {
+            id: '27',
+            image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1792230281/adasdasdsa_kl17az.png',
+            title: 'AB Group of Companies - Corporate Website',
+            link: 'https://abgroup.bd/',
+            description: 'A corporate website for AB Group of Companies, designed to provide a professional and user-friendly experience for visitors seeking information about the company and its services.',
+            category: 'web-applications',
+        },
     ];
 
     useEffect(() => {
@@ -229,7 +245,7 @@ const AllWorks = () => {
             <section className=' py-10 px-4 sm:px-8'>
                 <div className='max-w-7xl mx-auto'>
                     <h1 className='text-5xl sm:text-7xl font-bodoni text-center dark:text-primary text-secondary mb-12 leading-tight'>
-                        -Projects-
+                        -Portfolio-
                     </h1>
 
                     <div className='flex gap-4 sm:justify-center mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide'>

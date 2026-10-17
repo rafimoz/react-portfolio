@@ -6,34 +6,41 @@ import { useNavigate } from "react-router-dom";
 const workData = [
   {
     id: '01',
+    image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1792229968/Expand-pfp_so2qkc.png',
+    title: 'AB Assets Limited - Corporate Website',
+    link: 'https://abassets.bd/',
+    description: 'A corporate website for AB Assets Limited, designed to provide a professional and user-friendly experience for visitors seeking information about the company and its services.',
+  },
+  {
+    id: '02',
     image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1754168917/wimxj8iarnwzkarajlt2.jpg',
     title: 'Basha Bhara Hobe',
     link: 'https://basha-bhara-hobe.vercel.app/',
     description: `For House Owners: Take control of your listings! Easily post available apartment units, upload photos of each room, set prices, and manage availability from your personal dashboard. We'll automatically generate a unique QR code for your listing, which you can display outside your building for instant access. For Renters: Say goodbye to frustrating searches and agent fees! Simply scan the Basha Bhara Hobe QR code on any building to instantly view a list of all available units within that building. Explore detailed descriptions, clear pricing, and high-quality images of every room before you even step inside. No login required – just scan and discover! Our mission is to make renting seamless, transparent, and efficient for everyone.`,
   },
   {
-    id: '02',
+    id: '03',
     image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574498/carenavi_ox81ff.jpg',
     title: 'carenavi',
     link: 'https://carenavi-healthcare.vercel.app/',
     description: 'A health management platform, created using MERN stack technology. To bring friendliness to users.',
   },
   {
-    id: '03',
+    id: '04',
     image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497393/157_1x_shots_so_aswwzm.jpg',
     title: 'Lunch Box',
     link: 'https://github.com/rafimoz/office-lunch-menu-management',
     description: 'An office lunch management platform, created using MERN stack technology. To bring friendliness to users.',
   },
   {
-    id: '04',
+    id: '05',
     image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1740497395/209shots_so_osrv34.jpg',
     title: 'Portfolio',
     link: 'https://dribbble.com/shots/25642292-Modern-Portfolio-Design',
     description: 'A personal portfolio, inspired by 3D technology. To bring friendliness to users.',
   },
   {
-    id: '05',
+    id: '06',
     image: 'https://res.cloudinary.com/dhlh7av5k/image/upload/v1733574510/uidesign_pc8s8o.jpg',
     title: 'Photobooth',
     link: 'https://dribbble.com/shots/25737179-Personal-Portfolio-Photographer',
@@ -45,10 +52,10 @@ const RecentWork = () => {
   const navigate = useNavigate();
 
   const expertiseRef = useRef([]);
-    const containerRef = useRef(null);
-  
+  const containerRef = useRef(null);
 
-   // Title & content animations
+
+  // Title & content animations
   useEffect(() => {
     expertiseRef.current.forEach((ref, index) => {
       if (ref) {
@@ -126,7 +133,7 @@ const RecentWork = () => {
             <div className="h-full">
               <div className="w-full h-full" >
                 <div className="flex overflow-x-scroll items-center h-full w-full ">
-                  <div  ref={(el) => (expertiseRef.current[1] = el)} className="flex py-4 sm:py-6 gap-4 h-full " >
+                  <div ref={(el) => (expertiseRef.current[1] = el)} className="flex py-4 sm:py-6 gap-4 h-full " >
                     {workData.map((work) => (
                       <WorkCard
                         key={work.id}
